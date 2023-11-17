@@ -5,7 +5,8 @@ body{
 
 /*Standartwerte für jeden Knopf*/
 /*Kann auch über die Klasse "knopf" angewendet werden*/
-.knopf, button{
+.knopf,
+button{
     background-color: #00B5AD;
     color: white;
 
@@ -18,13 +19,15 @@ body{
 
 /*Standartwerte für jeden Knopf über dem die Mouse steht*/
 /*Kann auch über die Klasse "knopf" angewendet werden*/
-.knopf:hover, button:hover{
+.knopf:hover,
+button:hover{
     background-color: #046E69;
 }
 
 /*Standartwerte für jeden Knopf der betätigt wird*/
 /*Kann auch über die Klasse "knopf" angewendet werden*/
-.knopf:active, button:active{
+.knopf:active,
+button:active{
     box-shadow: 0 0; /*Der Schatten eines Knopfes wir entfernt*/
 }
 

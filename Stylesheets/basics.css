@@ -2,6 +2,35 @@
     display: flex;
 }
 
-.flexdown{
+.flex-down{
     flex-direction: column;
+}
+
+.outset-shadow{
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.inset-shadow{
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.rounded{
+    border-radius: 5px;
+}
+
+.border-std{
+    border-radius: 5px;
+    border: 0;
+}
+
+.fontsize-32px{
+    font-size: 32px;
+}
+
+.fontsize-25px{
+    font-size: 25px;
+}
+
+.fontsize-20px{
+    font-size: 25px;
 }
