@@ -1,0 +1,78 @@
+/*Standartwerte für alles in Body*/
+body{
+    font-family: verdana, serif;
+}
+
+/*Standartwerte für jeden Knopf*/
+/*Kann auch über die Klasse "knopf" angewendet werden*/
+.knopf, button{
+    background-color: #00B5AD;
+    color: white;
+
+    border-radius: 5px;
+    border: 0;
+    margin: 7px;
+
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/*Standartwerte für jeden Knopf über dem die Mouse steht*/
+/*Kann auch über die Klasse "knopf" angewendet werden*/
+.knopf:hover, button:hover{
+    background-color: #046E69;
+}
+
+/*Standartwerte für jeden Knopf der betätigt wird*/
+/*Kann auch über die Klasse "knopf" angewendet werden*/
+.knopf:active, button:active{
+    box-shadow: 0 0; /*Der Schatten eines Knopfes wir entfernt*/
+}
+
+/*Werte für hohe Knöpfe wie z.B im Hauptmenu*/
+/*T1 = Typ1 => Breite Knöpfe*/
+.knopfT1Gross{
+    font-size: 32px;
+
+    width: 350px;
+    height: 85px;
+}
+
+/*Werte für medium hohe Knöpfe wie z.B bei den Fragen*/
+/*T1 = Typ1 => Breite Knöpfe*/
+.knopfT1Medium{
+    font-size: 20px;
+
+    width: 350px;
+    height: 70px;
+}
+
+/*Werte für tiefe Knöpfe wie z.B bei Anmeldung
+T1 = Typ1 => Breite Knöpfe*/
+.knopfT1Klein{
+    font-size: 25px;
+
+    width: 310px;
+    height: 50px;
+}
+
+/*Werte für große Knöpfe*/
+/*T2 = Typ2 => schmale Knöpfe*/
+.knopfT2Gross{
+    font-size: 20px;
+
+    width: 212px;
+    height: 100px;
+}
+
+/*Werte für große Knöpfe die im refenziereten Menu sind.*/
+/*Diese Knöpfe sollen also nichts machen und haben kein Hover-Effect.*/
+/*T2 = Typ2 => schmale Knöpfe*/
+.knopfT2GrossAuswahl{
+    font-size: 32px;
+    font-weight: 700;
+
+    background-color: #046E69;
+
+    width: 212px;
+    height: 120px;
+}
