@@ -1,14 +1,21 @@
 /*Standartstyle für alles in Body*/
 body{
     font-family: verdana, serif;
+
+    --primär-hell: #00B5AD;
+    --primär-dunkel: #046E69;
+    --hintergrund-grau: #DBDBDB;
+    --hintergrund-weiß: #FFFFFF;
+    --text-grau: #231F20;
+    --warnung-rot: #D42323;
 }
 
 /*Standartstyle für jeden Knopf*/
 /*Kann auch über die Klasse "knopf" angewendet werden*/
 .knopf,
 button{
-    background-color: #00B5AD;
-    color: white;
+    background-color: var(--primär-hell);
+    color: var(--hintergrund-weiß);
 
     border-radius: 5px;
     border: 0;
@@ -23,7 +30,7 @@ button{
 /*Kann auch über die Klasse "knopf" angewendet werden*/
 .knopf:hover,
 button:hover{
-    background-color: #046E69;
+    background-color: var(--primär-dunkel);
 }
 
 /*Standartstyle für jeden Knopf der betätigt wird*/
@@ -76,7 +83,7 @@ T1 = Typ1 => Breite Knöpfe*/
     font-size: 32px;
     font-weight: 700;
 
-    background-color: #046E69;
+    background-color: var(--primär-dunkel);
 
     width: 212px;
     height: 120px;
@@ -84,5 +91,18 @@ T1 = Typ1 => Breite Knöpfe*/
 
 /*Style für ein Text Eingabefeld*/
 .inputField{
+    display: flex;
 
+    outline: 0;
+    border-color: var(--text-grau);
+    border-width: 0 0 1px 0;
+
+    width: 310px;
+    height: 40px;
+
+    font-size: 20px;
+    color: var(--text-grau);
+
+    justify-content: center;
+    align-items: center;
 }
