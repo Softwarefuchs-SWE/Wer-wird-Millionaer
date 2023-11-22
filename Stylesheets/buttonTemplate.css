@@ -1,9 +1,9 @@
-/*Standartwerte für alles in Body*/
+/*Standartstyle für alles in Body*/
 body{
     font-family: verdana, serif;
 }
 
-/*Standartwerte für jeden Knopf*/
+/*Standartstyle für jeden Knopf*/
 /*Kann auch über die Klasse "knopf" angewendet werden*/
 .knopf,
 button{
@@ -15,23 +15,25 @@ button{
     margin: 7px;
 
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    text-align: center;
 }
 
-/*Standartwerte für jeden Knopf über dem die Mouse steht*/
+/*Standartstyle für jeden Knopf über dem die Mouse steht*/
 /*Kann auch über die Klasse "knopf" angewendet werden*/
 .knopf:hover,
 button:hover{
     background-color: #046E69;
 }
 
-/*Standartwerte für jeden Knopf der betätigt wird*/
+/*Standartstyle für jeden Knopf der betätigt wird*/
 /*Kann auch über die Klasse "knopf" angewendet werden*/
 .knopf:active,
 button:active{
     box-shadow: 0 0; /*Der Schatten eines Knopfes wir entfernt*/
 }
 
-/*Werte für hohe Knöpfe wie z.B im Hauptmenu*/
+/*Style für hohe Knöpfe wie z.B im Hauptmenu*/
 /*T1 = Typ1 => Breite Knöpfe*/
 .knopfT1Gross{
     font-size: 32px;
@@ -40,7 +42,7 @@ button:active{
     height: 85px;
 }
 
-/*Werte für medium hohe Knöpfe wie z.B bei den Fragen*/
+/*Style für medium hohe Knöpfe wie z.B bei den Fragen*/
 /*T1 = Typ1 => Breite Knöpfe*/
 .knopfT1Medium{
     font-size: 20px;
@@ -49,7 +51,7 @@ button:active{
     height: 70px;
 }
 
-/*Werte für tiefe Knöpfe wie z.B bei Anmeldung
+/*Style für tiefe Knöpfe wie z.B bei Anmeldung
 T1 = Typ1 => Breite Knöpfe*/
 .knopfT1Klein{
     font-size: 25px;
@@ -58,7 +60,7 @@ T1 = Typ1 => Breite Knöpfe*/
     height: 50px;
 }
 
-/*Werte für große Knöpfe*/
+/*Style für große Knöpfe*/
 /*T2 = Typ2 => schmale Knöpfe*/
 .knopfT2Gross{
     font-size: 20px;
@@ -67,7 +69,7 @@ T1 = Typ1 => Breite Knöpfe*/
     height: 100px;
 }
 
-/*Werte für große Knöpfe die im refenziereten Menu sind.*/
+/*Style für große Knöpfe die im refenziereten Menu sind.*/
 /*Diese Knöpfe sollen also nichts machen und haben kein Hover-Effect.*/
 /*T2 = Typ2 => schmale Knöpfe*/
 .knopfT2GrossAuswahl{
@@ -78,4 +80,9 @@ T1 = Typ1 => Breite Knöpfe*/
 
     width: 212px;
     height: 120px;
+}
+
+/*Style für ein Text Eingabefeld*/
+.inputField{
+
 }

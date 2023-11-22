@@ -6,11 +6,11 @@
     flex-direction: column;
 }
 
-.outset-shadow{
+.shadow-outset{
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.inset-shadow{
+.shadow-inset{
     box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
@@ -33,4 +33,16 @@
 
 .fontsize-20px{
     font-size: 25px;
+}
+
+.scrollContainer{
+    overflow: auto;
+}
+
+.align-center{
+    align-content: center;
+}
+
+.align-right{
+    justify-content: right;
 }
