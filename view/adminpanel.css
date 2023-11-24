@@ -1,0 +1,27 @@
+
+
+#fh-logo{
+
+    position: fixed;
+}
+
+#fh-logo{
+   right: 0;
+    top: 44px;
+}
+.buttons{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 11%;
+    margin-top : 20%;
+
+}
