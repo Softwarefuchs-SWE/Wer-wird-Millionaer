@@ -12,7 +12,7 @@ include "admin_template.html"
         <input class="inputField" id="inputQuestionText" type="text" name="" value="Bitte geben Sie hier die Fragen ein, die Sie einfügen möchten">
         </div>
 
-        <form>
+        <form id="checkboxForm">
 
             <div class = "checkbox-container inputField">
                 <input type="text" value="Antwort 1. eingeben">
@@ -41,14 +41,41 @@ include "admin_template.html"
                     <option value="frage2">Niveau 2</option>
                     <option value="frage3">Niveau 3</option>
                 </select>
+
+                <script> document.addEventListener("DOMContentLoaded", function () {
+                        const checkboxes = document.querySelectorAll('#checkboxForm input[type="checkbox"]');
+
+                        checkboxes.forEach(function (checkbox) {
+                            checkbox.addEventListener('change', function () {
+                                if (this.checked) {
+                                    // Wenn eine Checkbox ausgewählt wurde, deaktiviere die anderen
+                                    checkboxes.forEach(function (otherCheckbox) {
+                                        if (otherCheckbox !== checkbox) {
+                                            otherCheckbox.checked = false;
+                                        }
+                                    });
+                                }
+                            });
+                        });
+                    });
+                </script>
+
+
             </div>
         </form>
     </div>
 
      <div class="buttonBottomContainer">
          <form >
-             <input class="knopfT1Medium knopf" type="button" name="back" value="Zurück">
-             <input class="knopfT1Medium knopf"  type="button" name="confirm" value="Eintragen">
+             <input class="knopfT1Medium knopf" type="button" name="back" value="Zurück" onclick=" redirectToAdminPanel()" >
+             <input class="knopfT1Medium knopf"  type="button" name="confirm" value="Eintragen" onclick=" redirectToAdminPanel()">
+
+             <script>
+
+                 function  redirectToAdminPanel() {
+                     window.location.href = "adminpanel.php";
+                 }
+             </script>
          </form>
 
      </div>

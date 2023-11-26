@@ -11,32 +11,31 @@ body{
 }
 
 
+
 #text {
     display: flex;
     text-align: center;
     background: #046E69;
     color: var(--hintergrund-weiß);
-    height: 40px;
+    height: 52px;
 
 }
+.scroll-menu{
 
-.questionHeader{
+    display: flex;
+    margin-top: 4%;
 
 }
-
 /*Standartstyle für jeden Knopf*/
 /*Kann auch über die Klasse "knopf" angewendet werden*/
 .knopf,
 button{
     background-color: var(--primär-hell);
     color: var(--hintergrund-weiß);
-
     border-radius: 5px;
     border: 0;
     margin: 7px;
-
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-
     text-align: center;
 }
 
@@ -58,7 +57,6 @@ button:active{
 /*T1 = Typ1 => Breite Knöpfe*/
 .knopfT1Gross{
     font-size: 32px;
-
     width: 350px;
     height: 85px;
 }
@@ -67,8 +65,7 @@ button:active{
 /*T1 = Typ1 => Breite Knöpfe*/
 .knopfT1Medium{
     font-size: 20px;
-
-    width: 350px;
+    width: 43%;
     height: 70px;
 }
 
@@ -117,6 +114,6 @@ T1 = Typ1 => Breite Knöpfe*/
     font-size: 20px;
     color: var(--text-grau);
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+   align-items: center;
 }
