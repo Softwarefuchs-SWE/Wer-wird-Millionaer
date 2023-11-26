@@ -10,6 +10,20 @@ body{
     --warnung-rot: #D42323;
 }
 
+
+#text {
+    display: flex;
+    text-align: center;
+    background: #046E69;
+    color: var(--hintergrund-weiß);
+    height: 40px;
+
+}
+
+.questionHeader{
+
+}
+
 /*Standartstyle für jeden Knopf*/
 /*Kann auch über die Klasse "knopf" angewendet werden*/
 .knopf,
@@ -82,21 +96,21 @@ T1 = Typ1 => Breite Knöpfe*/
 .knopfT2GrossAuswahl{
     font-size: 32px;
     font-weight: 700;
+    height: 20%;
+}
 
-    background-color: var(--primär-dunkel);
+.knopfT2GrossAuswahl{
+  width: 98%;
+    margin: 3px;
 
-    width: 212px;
-    height: 120px;
 }
 
 /*Style für ein Text Eingabefeld*/
 .inputField{
     display: flex;
-
     outline: 0;
     border-color: var(--text-grau);
     border-width: 0 0 1px 0;
-
     width: 310px;
     height: 40px;
 

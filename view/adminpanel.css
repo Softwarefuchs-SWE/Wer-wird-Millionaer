@@ -1,21 +1,15 @@
 
-
 #fh-logo{
-
     position: fixed;
-}
-
-#fh-logo{
-   right: 0;
+    right: 0;
     top: 44px;
 }
-.buttons{
 
+.buttons{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 header {
     display: flex;
@@ -23,5 +17,63 @@ header {
     align-items: center;
     margin-bottom: 11%;
     margin-top : 20%;
+}
+main {
+    margin-bottom: 20%;
+}
+#niv{
+    background: #046E69;
+}
+#niv select{
+    margin: 10px;
+    outline: 0;
+    border-width: 0 0 1px 0;
+    width: 290px;
+    height: 20px;
+    font-size: 17px;
+    text-align: center;
+
 
 }
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.questionHeader{
+
+
+
+}
+.checkbox-container {
+    display: flex;
+    align-items: center; /* Zentrierung der Checkboxen und Textfelder vertikal */
+    background: #00B5AD;
+    margin-bottom: 15px; /* Abstand zwischen den Checkbox-Containern */
+}
+
+    .check {
+        border-radius: 50%; /* Runde Ecken */
+        width: 16px; /* Breite der Checkbox */
+        height: 16px; /* Höhe der Checkbox */
+    }
+
+#inputQuestionText{
+    height: 56px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-top-color: crimson;
+}
+
+
+.buttonBottomContainer form {
+    display: flex;
+    align-content: center;
+}
+    .buttonBottomContainer{
+        position: relative;
+        align-items: center;
+        align-self: center;
+
+    }
