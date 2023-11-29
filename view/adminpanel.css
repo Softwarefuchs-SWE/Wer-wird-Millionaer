@@ -1,0 +1,121 @@
+
+#fh-logo{
+    position: fixed;
+    right: 0;
+    top: 44px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 11%;
+    margin-top : 20%;
+}
+main {
+    margin-bottom: 20%;
+}
+#niv{
+    background: #046E69;
+}
+#niv select{
+    margin: 10px;
+    outline: 0;
+    border-width: 0 0 1px 0;
+    width: 290px;
+    height: 20px;
+    font-size: 17px;
+    text-align: center;
+
+
+}
+
+.labelQuestion{
+
+    display: flex;
+    outline: 0;
+    border-color: var(--text-grau);
+    border-width: 0 0 1px 0;
+    width: 310px;
+    height: 66px;
+
+    font-size: 20px;
+    color: var(--text-grau);
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.scroll-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background: #046E69;
+}
+.option{
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+   align-items: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center; /* Zentrierung der Checkboxen und Textfelder vertikal */
+    background: #00B5AD;
+    margin-bottom: 15px; /* Abstand zwischen den Checkbox-Containern */
+}
+
+    .check {
+        border-radius: 50%; /* Runde Ecken */
+        width: 16px; /* Breite der Checkbox */
+        height: 16px; /* Höhe der Checkbox */
+    }
+
+#inputQuestionText{
+    height: 56px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.scroll-menu {
+    max-height: 340px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+.buttonBottomContainer form {
+ display: flex;
+    flex-direction: row;
+
+}
+
+input:focus{
+    outline: 2px solid #046E69;
+}
+
+input[type="checkbox"] {
+    border-radius: 50%; /* Rundung der Ecken auf 50% (macht die Checkbox rund) */
+}
+
+.buttonBottomContainer{
+
+    position: relative;
+    bottom: -150px;
+    left: 20px;
+
+
+    }
