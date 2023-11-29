@@ -89,6 +89,15 @@ T1 = Typ1 => Breite Knöpfe*/
     height: 120px;
 }
 
+.knopfBlank{
+    background-color: transparent !important;
+    border: 0;
+    appearance: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 15px;
+}
+
 /*Style für ein Text Eingabefeld*/
 .inputField{
     display: flex;

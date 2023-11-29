@@ -23,6 +23,10 @@
     border: 0;
 }
 
+.debug_border *{
+    border: 1px dashed red !important;
+}
+
 .fontsize-32px{
     font-size: 32px;
 }
@@ -39,10 +43,10 @@
     overflow: auto;
 }
 
-/*.align-center{
-    align-content: center;
+.align-center{
+    text-align: center;
 }
 
 .align-right{
-    justify-content: right;
-}*/
+    text-align: right;
+}
