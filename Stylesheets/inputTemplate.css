@@ -89,9 +89,19 @@ T1 = Typ1 => Breite Knöpfe*/
     height: 120px;
 }
 
+.knopfT3Rund{
+    background-color: transparent !important;
+    border: 0;
+    appearance: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+}
+
 /*Style für ein Text Eingabefeld*/
 .inputField{
-    display: flex;
+
 
     outline: 0;
     border-color: var(--text-grau);
@@ -103,6 +113,7 @@ T1 = Typ1 => Breite Knöpfe*/
     font-size: 20px;
     color: var(--text-grau);
 
+    /*display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
 }
