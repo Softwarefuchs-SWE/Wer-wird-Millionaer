@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<?php include "view/templates/full_header.php" ?>
+<?php include "view_bsp/templates/full_header.php" ?>
 
 <main>
     <form class="align-content-center" action="index.html" method="get">

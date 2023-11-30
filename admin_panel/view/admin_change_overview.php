@@ -19,9 +19,8 @@ $fragen = array(
 <main>
 
     <main>
-
-        <div class="buttons">
-            <label class="inputField" id="text"> Bitte wählen Sie eine Fragen zum ändern aus: </label>
+        <label id="text"> Bitte wählen Sie eine Fragen zum ändern aus: </label>
+        <div class="main_container">
 
             <div class="scroll-menu">
 
@@ -32,9 +31,9 @@ $fragen = array(
 
                     for($i =0; $i < count($fragen); $i++){
 
-                        echo "<div class='option'>";
-                        echo "<label class='labelQuestion '>$fragen[$i]</label>";
-                        echo " <input type='checkbox' class='checkScroll' onchange=''handleCheckboxChange(this)''>";
+                        echo "<div class=' round-checkbox option'>";
+                        echo "<label class='labelQuestion  '>$fragen[$i]</label>";
+                        echo " <input type='checkbox' class='checkScroll' >";
                         echo "</div>";
                    }
                     ?>
@@ -55,11 +54,10 @@ $fragen = array(
         </div>
 
 
-        <div class="buttonBottomContainer">
-            <form >
-                <input class="knopfT1Medium knopf" type="button" name="back" value="Zurück" onclick="back_()">
-                <input class="knopfT1Medium knopf"  type="button" name="confirm" value="Ändern">
 
+            <form class="buttonBottomContainer">
+                <input class="knopfT2GrossAuswahl knopf" type="button" name="back" value="Zurück" onclick="back_()">
+                <input class="knopfT2GrossAuswahl knopf"  type="button" name="confirm" value="Ändern" onclick="continue_changepanel()" >
                 <script>
 
                     function back_  (){
@@ -67,10 +65,14 @@ $fragen = array(
                         window.location.href = "adminpanel.php";
                     }
 
+                    function continue_changepanel(){
+                        window.location.href = "admin_panel_change.php";
+                    }
+
                 </script>
             </form>
 
-        </div>
+
 
     </main>
 

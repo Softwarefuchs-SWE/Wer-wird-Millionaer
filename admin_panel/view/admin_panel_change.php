@@ -1,39 +1,37 @@
 <?php
-include "admin_template.html"
-
+include "admin_template.html";
 ?>
 
+
 <main>
-    <label id="text"> Neue Frage eintragen: </label>
+    <label  id="text"> Bestehende Frage ändern: </label>
     <div class="main_container">
-
-        <div class="questionHeader">
-
-        <input class="inputField" id="inputQuestionText" type="text" name="" value="Bitte geben Sie hier die Fragen ein, die Sie einfügen möchten">
-        </div>
-
         <form id="checkboxForm">
 
-            <div class = "checkbox-container round-checkbox ">
+            <div class="questionHeader">
+
+                <input class="inputField" id="inputQuestionText" type="text" name="" value="Bitte geben Sie hier die Fragen ein, die Sie einfügen möchten">
+            </div>
+
+            <div class = "checkbox-container ">
                 <input type="text" value="Antwort 1. eingeben">
-                <input   type="checkbox">
-
+                <input class="check" type="checkbox">
             </div>
 
-            <div class="checkbox-container round-checkbox ">
+            <div class="checkbox-container ">
                 <input type="text" value="Antwort 2. eingeben">
-                <input  type="checkbox">
+                <input class="check" type="checkbox">
 
             </div>
 
-            <div class="checkbox-container round-checkbox">
+            <div class="checkbox-container ">
                 <input type="text" value="Antwort 3. eingeben">
-                <input  type="checkbox">
+                <input class="check" type="checkbox">
             </div>
 
-            <div class="checkbox-container round-checkbox ">
+            <div class="checkbox-container ">
                 <input type="text" value="Antwort 4. eingeben">
-                <input  type="checkbox">
+                <input class="check" type="checkbox">
             </div>
 
             <div id="niv" >
@@ -66,18 +64,20 @@ include "admin_template.html"
         </form>
     </div>
 
+    <div class="buttonBottomContainer">
+        <form >
+            <input class="knopfT2GrossAuswahl knopf" type="button" name="back" value="Zurück" onclick=" bacK_to_change_overview()" >
+            <input class="knopfT2GrossAuswahl knopf"  type="button" name="confirm" value="Ändern" onclick=" redirectToAdminPanel()">
 
-         <form class="buttonBottomContainer">
-             <input class="knopfT2GrossAuswahl knopf" type="button" name="back" value="Zurück" onclick=" redirectToAdminPanel()" >
-             <input class="knopfT2GrossAuswahl knopf"  type="button" name="confirm" value="Eintragen" onclick=" redirectToAdminPanel()">
+            <script>
 
-             <script>
+                function  bacK_to_change_overview() {
+                    window.location.href = "admin_change_overview.php";
+                }
+            </script>
+        </form>
 
-                 function  redirectToAdminPanel() {
-                     window.location.href = "adminpanel.php";
-                 }
-             </script>
-         </form>
+    </div>
 
 
 </main>
@@ -93,4 +93,5 @@ include "admin_template.html"
 </body>
 
 </html>
+
 

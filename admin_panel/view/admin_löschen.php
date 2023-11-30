@@ -18,16 +18,16 @@ $fragen = array(
 ?>
 
 
-<main>
 
-    <div class="buttons">
-    <label class="inputField" id="text"> Wählen Sie eine Fragen zum löschen aus </label>
+<main>
+    <label id="text"> Wählen Sie eine Frage zum Löschen aus </label>
+
+    <div class="main_container">
+
 
         <div class="scroll-menu">
 
-            <div class="options">
-
-
+            <div class="options round-checkbox">
                 <?php
 
                 for($i =0; $i < count($fragen); $i++){
@@ -47,7 +47,7 @@ $fragen = array(
         <script>
 
             document.addEventListener("DOMContentLoaded", function () {
-                const options = document.querySelectorAll('.scroll-menu .option');
+                const options = document.querySelectorAll('.options .option');
             });
 
         </script>
@@ -55,11 +55,10 @@ $fragen = array(
     </div>
 
 
-    <div class="buttonBottomContainer">
-        <form >
-            <input class="knopfT1Medium knopf" type="button" name="back" value="Zurück" onclick="back_()">
-            <input class="knopfT1Medium knopf"  type="button" name="confirm" value="Löschen">
 
+        <form class="buttonBottomContainer">
+            <input class="knopfT2GrossAuswahl knopf"  type="button" name="back" value="Zurück" onclick="back_()">
+            <input class="knopfT2GrossAuswahl knopf " type="button" name="confirm" value="Löschen">
 
             <script>
 
@@ -68,11 +67,10 @@ $fragen = array(
                     window.location.href = "adminpanel.php";
                 }
 
-
             </script>
         </form>
 
-    </div>
+
 
 </main>
 
