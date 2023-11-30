@@ -1,4 +1,4 @@
-//DROP DATABASE if exists swe_db;
+-- DROP DATABASE if exists swe_db;
 CREATE DATABASE IF NOT EXISTS swe_db;
 USE swe_db;
 
