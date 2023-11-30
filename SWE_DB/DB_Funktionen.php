@@ -23,17 +23,15 @@ $sql = "SELECT Frage, Antwort_1, Antwort_2, Antwort_3, Antwort_4
         WHERE Frage_schwierigkeit = 1
         LIMIT 3";
 
-//$result = mysqli_fetch_assoc(mysqli_query($link, $sql));
+$result = mysqli_query($link, $sql);
 
-$result1 = mysqli_query($link, $sql);
-
-if (!$result1)
+if (!$result)
 {
   echo "Fehler während der Abfrage:  ", mysqli_error($link);
   exit();
 }
 
-while ($row = mysqli_fetch_assoc($result1))
+while ($row = mysqli_fetch_assoc($result))
 {
   foreach ($row as $value)
   {
