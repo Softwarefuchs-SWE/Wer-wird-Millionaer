@@ -18,7 +18,6 @@ $fragen = array(
 ?>
 
 
-
 <main>
 
     <div class="buttons">
@@ -34,7 +33,7 @@ $fragen = array(
                 for($i =0; $i < count($fragen); $i++){
 
                     echo "<div class='option'>";
-                    echo "<label class='labelQuestion knopf'>$fragen[$i]</label>";
+                    echo "<label class='labelQuestion' >$fragen[$i]</label>";
                     echo " <input type='checkbox' class='checkScroll'>";
                     echo "</div>";
 
@@ -49,13 +48,6 @@ $fragen = array(
 
             document.addEventListener("DOMContentLoaded", function () {
                 const options = document.querySelectorAll('.scroll-menu .option');
-
-                options.forEach(function (option) {
-                    option.addEventListener('click', function () {
-                        // Hier kannst du die gewünschte Aktion für die ausgewählte Option durchführen
-                        console.log("Ausgewählte Option:", option.textContent);
-                    });
-                });
             });
 
         </script>
@@ -65,8 +57,19 @@ $fragen = array(
 
     <div class="buttonBottomContainer">
         <form >
-            <input class="knopfT1Medium knopf" type="button" name="back" value="Zurück">
+            <input class="knopfT1Medium knopf" type="button" name="back" value="Zurück" onclick="back_()">
             <input class="knopfT1Medium knopf"  type="button" name="confirm" value="Löschen">
+
+
+            <script>
+
+                function back_(){
+
+                    window.location.href = "adminpanel.php";
+                }
+
+
+            </script>
         </form>
 
     </div>
