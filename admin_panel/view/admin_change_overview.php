@@ -13,9 +13,7 @@ $fragen = get_question_full();
         <div class="main_container">
             <form name='checkboxes' method='post' action="admin_panel_change.php">
             <div class="scroll-menu">
-
                 <div class="options">
-
 
                     <?php
 
@@ -23,8 +21,7 @@ $fragen = get_question_full();
 
                         echo "<div class=' round-checkbox option'>";
                         echo "<label class='labelQuestion'>" . $item['Frage'] . "</label>";
-                        echo "<input type='checkbox' class='checkScroll' value='" . $item['id'] . "'>";
-
+                        echo "<input type='checkbox' class='checkScroll' name='checkboxes[]' value='" . $item['id'] . "'>";
                         echo "</div>";
 
                     }
@@ -34,31 +31,32 @@ $fragen = get_question_full();
 
             </div>
 
-            <script>
 
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    document.querySelectorAll('.scroll-menu .option');
-                });
-
-            </script>
 
         </div>
-
-
 
            <div  class="buttonBottomContainer">
             <input class="knopfT2GrossAuswahl knopf" type="button" name="back" value="Zurück" onclick="back_()">
             <input class="knopfT2GrossAuswahl knopf"  type="submit" name="confirm" value="Ändern" >
-            <script>
+           </div>
+               </form>
+
+        <script>
+
+
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll('.scroll-menu .option');
+            });
+
 
                 function back_  (){
 
                     window.location.href = "adminpanel.php";
                 }
 
-            </script></div>
-        </form>
+            </script>
+
+
 
 
     </main>

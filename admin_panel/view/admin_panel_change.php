@@ -1,37 +1,48 @@
 <?php
 include "admin_template.html";
-var_dump($$_POST);
+include "C:\Users\herrd\OneDrive\Repository_Dennis\Taschenrechner2\Wer-wird-Millionaer\admin_panel\db_handling_adminpanel\db_handling.php";
+
+  if(!empty($_POST['checkboxes'][0])){
+      $question= get_question_by_id($_POST['checkboxes'][0]);
+  }
+  $fragentext = isset($_POST['checkboxes'][0]) ? $question[0]['Frage'] : "Sie müssen eine Frage auswählen";
+  $ans1 =  isset($_POST['checkboxes'][0]) ? $question[0]['Antwort_1'] : "Sie müssen eine Frage auswählen";
+  $ans2 =  isset($_POST['checkboxes'][0]) ? $question[0]['Antwort_2'] : "Sie müssen eine Frage auswählen";
+  $ans3 =  isset($_POST['checkboxes'][0]) ? $question[0]['Antwort_3'] : "Sie müssen eine Frage auswählen";
+  $ans4 =  isset($_POST['checkboxes'][0]) ? $question[0]['Antwort_4'] : "Sie müssen eine Frage auswählen";
+
+
 ?>
 
 
 <main>
     <label  id="text"> Bestehende Frage ändern: </label>
     <div class="main_container">
-        <form id="checkboxForm">
+        <form id="checkboxForm" action="admin_panel_change.php" method="post">
 
             <div class="questionHeader">
 
-                <input class="inputField" id="inputQuestionText" type="text" name="" value="Bitte geben Sie hier die Fragen ein, die Sie einfügen möchten">
+                <input id="inputQuestionText" type="text" name="" value="<?php echo $fragentext?>" style="word-wrap: break-word;">
             </div>
 
             <div class = "checkbox-container ">
-                <input type="text" value="Antwort 1. eingeben">
+                <input type="text" value="<?php echo $ans1?>">
                 <input class="check" type="checkbox">
             </div>
 
             <div class="checkbox-container ">
-                <input type="text" value="Antwort 2. eingeben">
+                <input type="text" value="<?php echo $ans2?>">
                 <input class="check" type="checkbox">
 
             </div>
 
             <div class="checkbox-container ">
-                <input type="text" value="Antwort 3. eingeben">
+                <input type="text" value="<?php echo $ans3?>">
                 <input class="check" type="checkbox">
             </div>
 
             <div class="checkbox-container ">
-                <input type="text" value="Antwort 4. eingeben">
+                <input type="text" value="<?php echo $ans4?>">
                 <input class="check" type="checkbox">
             </div>
 
@@ -62,13 +73,13 @@ var_dump($$_POST);
 
 
             </div>
-        </form>
+
     </div>
 
     <div class="buttonBottomContainer">
-        <form >
+
             <input class="knopfT2GrossAuswahl knopf" type="button" name="back" value="Zurück" onclick=" bacK_to_change_overview()" >
-            <input class="knopfT2GrossAuswahl knopf"  type="button" name="confirm" value="Ändern" onclick=" redirectToAdminPanel()">
+            <input class="knopfT2GrossAuswahl knopf"  type="submit" name="confirm" value="Ändern" >
 
             <script>
 

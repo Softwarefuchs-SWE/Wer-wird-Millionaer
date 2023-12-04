@@ -7,13 +7,8 @@ include "admin_template.html"
     <label id="text"> Neue Frage eintragen: </label>
     <div class="main_container">
 
-        <div class="questionHeader">
-
-        <input class="inputField" id="inputQuestionText" type="text" name="" value="Bitte geben Sie hier die Fragen ein, die Sie einfügen möchten">
-        </div>
-
         <form id="checkboxForm">
-
+            <input id="inputQuestionText"  type="text" name="" value="Bitte geben Sie hier die Fragen ein, die Sie einfügen möchten">
             <div class = "checkbox-container round-checkbox ">
                 <input type="text" value="Antwort 1. eingeben">
                 <input   type="checkbox">
