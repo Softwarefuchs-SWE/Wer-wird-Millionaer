@@ -68,6 +68,7 @@ main {
     font-size: 20px;
     color: white;
     justify-content: center;
+    justify-items: center;
     align-items: center;
     align-content: center;
     background: #00B5AD;
@@ -125,12 +126,18 @@ main {
 
 
 #inputQuestionText{
-
+    box-sizing: border-box;
     height: 56px;
     margin-top: 4px;
     margin-bottom: 4px;
     border-top: 3px solid #046E69;
     border-bottom: 3px solid #046E69;
+    display: flex;
+    outline: 0;
+    width: 100%;
+    font-size: 20px;
+    color: var(--text-grau);
+    overflow-wrap: break-word;
 }
 
 .options{
