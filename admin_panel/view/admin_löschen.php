@@ -1,18 +1,8 @@
 <?php
 include "admin_template.html";
 
-$fragen = array(
-    "Wie lautet die Hauptstadt von Frankreich?",
-    "In welchem Jahr wurde die Berliner Mauer errichtet?",
-    "Wie viele Kontinente gibt es?",
-    "Wer schrieb 'Romeo und Julia'?",
-    "Was ist die Hauptzutat in Guacamole?",
-    "Wie nennt man die kleinste Einheit eines Elements?",
-    "Welches ist das am meisten gesprochene Sprache der Welt?",
-    "Wie viele Planeten hat unser Sonnensystem?",
-    "Wer war der erste Präsident der Vereinigten Staaten?",
-    "Was ist die Hauptstadt von Australien?"
-);
+include "C:\Users\herrd\OneDrive\Repository_Dennis\Taschenrechner2\Wer-wird-Millionaer\admin_panel\db_handling_adminpanel\db_handling.php";
+$fragen = get_question_label();
 
 
 ?>
@@ -30,10 +20,10 @@ $fragen = array(
             <div class="options round-checkbox">
                 <?php
 
-                for($i =0; $i < count($fragen); $i++){
+                foreach($fragen as $value => $item){
 
                     echo "<div class='option'>";
-                    echo "<label class='labelQuestion' >$fragen[$i]</label>";
+                    echo "<label class='labelQuestion'>" . $item['Frage'] . "</label>";
                     echo " <input type='checkbox' class='checkScroll'>";
                     echo "</div>";
 

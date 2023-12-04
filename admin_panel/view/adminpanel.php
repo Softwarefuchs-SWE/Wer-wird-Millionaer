@@ -1,5 +1,8 @@
 <?php
-include "admin_template.html"
+include "admin_template.html";
+include "C:\Users\herrd\OneDrive\Repository_Dennis\Taschenrechner2\Wer-wird-Millionaer\admin_panel\db_handling_adminpanel\db_handling.php";
+$fragen = get_question_label();
+
 ?>
 
 <main>

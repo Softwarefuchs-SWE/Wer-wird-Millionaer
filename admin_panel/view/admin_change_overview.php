@@ -1,17 +1,7 @@
 <?php
 include "admin_template.html";
-$fragen = array(
-    "Wie lautet die Hauptstadt von Frankreich?",
-    "In welchem Jahr wurde die Berliner Mauer errichtet?",
-    "Wie viele Kontinente gibt es?",
-    "Wer schrieb 'Romeo und Julia'?",
-    "Was ist die Hauptzutat in Guacamole?",
-    "Wie nennt man die kleinste Einheit eines Elements?",
-    "Welches ist das am meisten gesprochene Sprache der Welt?",
-    "Wie viele Planeten hat unser Sonnensystem?",
-    "Wer war der erste Präsident der Vereinigten Staaten?",
-    "Was ist die Hauptstadt von Australien?"
-);
+include "C:\Users\herrd\OneDrive\Repository_Dennis\Taschenrechner2\Wer-wird-Millionaer\admin_panel\db_handling_adminpanel\db_handling.php";
+$fragen = get_question_full();
 
 ?>
 
@@ -21,7 +11,7 @@ $fragen = array(
     <main>
         <label id="text"> Bitte wählen Sie eine Fragen zum ändern aus: </label>
         <div class="main_container">
-
+            <form name='checkboxes' method='post' action="admin_panel_change.php">
             <div class="scroll-menu">
 
                 <div class="options">
@@ -29,13 +19,15 @@ $fragen = array(
 
                     <?php
 
-                    for($i =0; $i < count($fragen); $i++){
+                    foreach ($fragen as  $value => $item) {
 
                         echo "<div class=' round-checkbox option'>";
-                        echo "<label class='labelQuestion  '>$fragen[$i]</label>";
-                        echo " <input type='checkbox' class='checkScroll' >";
+                        echo "<label class='labelQuestion'>" . $item['Frage'] . "</label>";
+                        echo "<input type='checkbox' class='checkScroll' value='" . $item['id'] . "'>";
+
                         echo "</div>";
-                   }
+
+                    }
                     ?>
 
                 </div>
@@ -46,7 +38,7 @@ $fragen = array(
 
 
                 document.addEventListener("DOMContentLoaded", function () {
-                     document.querySelectorAll('.scroll-menu .option');
+                    document.querySelectorAll('.scroll-menu .option');
                 });
 
             </script>
@@ -55,23 +47,18 @@ $fragen = array(
 
 
 
-            <form class="buttonBottomContainer">
-                <input class="knopfT2GrossAuswahl knopf" type="button" name="back" value="Zurück" onclick="back_()">
-                <input class="knopfT2GrossAuswahl knopf"  type="button" name="confirm" value="Ändern" onclick="continue_changepanel()" >
-                <script>
+           <div  class="buttonBottomContainer">
+            <input class="knopfT2GrossAuswahl knopf" type="button" name="back" value="Zurück" onclick="back_()">
+            <input class="knopfT2GrossAuswahl knopf"  type="submit" name="confirm" value="Ändern" >
+            <script>
 
-                    function back_  (){
+                function back_  (){
 
-                        window.location.href = "adminpanel.php";
-                    }
+                    window.location.href = "adminpanel.php";
+                }
 
-                    function continue_changepanel(){
-                        window.location.href = "admin_panel_change.php";
-                    }
-
-                </script>
-            </form>
-
+            </script></div>
+        </form>
 
 
     </main>
@@ -97,4 +84,3 @@ $fragen = array(
 </body>
 
 </html>
-

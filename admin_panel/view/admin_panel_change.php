@@ -1,5 +1,6 @@
 <?php
 include "admin_template.html";
+var_dump($$_POST);
 ?>
 
 
