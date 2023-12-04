@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Wer wird Millionär</title>
+  <script src="login.js"></script>
+  <link href="../Stylesheets/inputTemplate.css" rel="stylesheet">
+  <link href="../Stylesheets/basics.css" rel="stylesheet">
+  <link href="../Stylesheets/login.css" rel="stylesheet">
+</head>
+<div class="login-container">
+  <div class="loginImg">
+    <img src="../img_login/Logo.png" alt="Login Image">
+    <img class="logoImg" src="../img_login/FH-Logo.png" alt="Login Image">
+  </div>
+
+  <form class="inputContainer">
+    <div class="inputField inputFieldLessHeight">
+      <label for="vorname"></label>
+      <input type="text" id="vorname" name="username" placeholder="Vorname" required>
+    </div>
+    <div class="inputField inputFieldLessHeight">
+      <label for="nachname"></label>
+      <input type="text" id="nachname" name="Geburtsdatum (D.M.Y)" placeholder="Nachname" required>
+    </div>
+    <div class="inputField inputFieldLessHeight">
+      <label for="frage1_regestrierung"></label>
+      <input type="text" id="frage1_regestrierung" name="Der Name des 1. Haustiers" placeholder="Geburtsdatum (D.M.Y)" required>
+    </div>
+    <div class="inputField inputFieldLessHeight">
+      <label for="frage2_regestrierung"></label>
+      <input type="text" id="frage2_regestrierung" name="password" placeholder="Der Nachname der Mutter" required>
+    </div>
+    <div class="inputField inputFieldLessHeight">
+      <label for="frage3_regestrierung"></label>
+      <input type="text" id="frage3_regestrierung" name="password" placeholder="Deine Lieblingszahl" required>
+    </div>
+    <div class="inputField inputFieldLessHeight">
+      <label for="password_regestrierung"></label>
+      <input type="password" id="password_regestrierung" name="password" placeholder="Dein gewünschtes Passwort" required>
+    </div>
+  </form>
+  <button class="knopf anmeldeKnopf" type="submit">Regestrieren</button>
+  <button class="knopf anmeldeKnopf" type="submit" onclick=zurAnmeldung()>zur Anmeldung</button>
+
+</div>
+
+<div class="footer">
+  <a href="#">Datenschutz</a>
+  <span class="separator">|</span>
+  <a href="#">Impressum</a>
+</div>
+</body>
+</html>

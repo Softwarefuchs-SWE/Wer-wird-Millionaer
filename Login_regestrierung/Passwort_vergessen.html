@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Wer wird Millionär</title>
+  <script src="login.js"></script>
+  <link href="../Stylesheets/inputTemplate.css" rel="stylesheet">
+  <link href="../Stylesheets/basics.css" rel="stylesheet">
+  <link href="../Stylesheets/login.css" rel="stylesheet">
+</head>
+<div class="login-container">
+  <div class="loginImg">
+    <img src="../img_login/Logo.png" alt="Login Image">
+    <img class="logoImg" src="../img_login/FH-Logo.png" alt="Login Image">
+  </div>
+
+  <h1 class = "überschriftPasswortZurücksetzen">Setze dein <br> Passwort zurück</h1>
+
+  <h4>Fülle dazu bitte folgende <br> Felder aus!</h4>
+
+  <form class="inputContainer">
+    <div class="inputField inputFieldLessHeight">
+      <label for="frage1_zurücksetzen"></label>
+      <input type="text" id="frage1_zurücksetzen" name="password" placeholder="Der Name des 1. Haustiers" required>
+    </div>
+    <div class="inputField inputFieldLessHeight">
+      <label for="frage2_zurücksetzen"></label>
+      <input type="text" id="frage2_zurücksetzen" name="password" placeholder="Der Nachname der Mutter" required>
+    </div>
+    <div class="inputField inputFieldLessHeight">
+      <label for="frage3_zurücksetzen"></label>
+      <input type="text" id="frage3_zurücksetzen" name="password" placeholder="Deine Lieblingszahl" required>
+    </div>
+    <div class="inputField inputFieldLessHeight">
+      <label for="neues_password"></label>
+      <input type="password" id="neues_password" name="password" placeholder="Dein gewünschtes Passwort" required>
+    </div>
+  </form>
+  <button class="knopf anmeldeKnopf" type="submit">Zurücksetzen</button>
+  <button class="knopf anmeldeKnopf" type="submit" onclick=zurAnmeldung()>zur Anmeldung</button>
+
+</div>
+
+<div class="footer">
+  <a href="#">Datenschutz</a>
+  <span class="separator">|</span>
+  <a href="#">Impressum</a>
+</div>
+</body>
+</html>
