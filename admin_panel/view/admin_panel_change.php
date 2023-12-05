@@ -27,23 +27,23 @@ include "C:\Users\herrd\OneDrive\Repository_Dennis\Taschenrechner2\Wer-wird-Mill
 
             <div class = "checkbox-container ">
                 <input type="text" value="<?php echo $ans1?>">
-                <input class="check" type="checkbox">
+                <input class="check" type="checkbox" name="checkbox[]" value="1">
             </div>
 
             <div class="checkbox-container ">
                 <input type="text" value="<?php echo $ans2?>">
-                <input class="check" type="checkbox">
+                <input class="check" type="checkbox" name="checkbox[]"  value="2">
 
             </div>
 
             <div class="checkbox-container ">
                 <input type="text" value="<?php echo $ans3?>">
-                <input class="check" type="checkbox">
+                <input class="check" type="checkbox" name="checkbox[]" value="3">
             </div>
 
             <div class="checkbox-container ">
                 <input type="text" value="<?php echo $ans4?>">
-                <input class="check" type="checkbox">
+                <input class="check" type="checkbox" name="checkbox[]" value="4">
             </div>
 
             <div id="niv" >

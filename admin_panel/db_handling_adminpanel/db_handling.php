@@ -91,3 +91,64 @@ function get_question_by_id( $id) : array{
     mysqli_close($link);
     return $frage;
 }
+
+
+function insert_question(array $fragen) {
+
+    $link = connect_to_db();
+
+    $fragentext = mysqli_real_escape_string($link, $fragen['fragetext']);
+    $ans1 = mysqli_real_escape_string($link, $fragen['ans1']);
+    $ans2 = mysqli_real_escape_string($link, $fragen['ans2']);
+    $ans3 = mysqli_real_escape_string($link, $fragen['ans3']);
+    $ans4 = mysqli_real_escape_string($link, $fragen['ans4']);
+    $niv = mysqli_real_escape_string($link, $fragen['dropdown']);
+    $richtigeAns = mysqli_real_escape_string($link, $fragen['checkbox']);
+
+
+    $sql = "INSERT INTO fragen (Frage, Antwort_1, Antwort_2, Antwort_3, Antwort_4, Antwort_richtig, Frage_schwierigkeit)
+VALUES ('$fragentext', '$ans1', '$ans2', '$ans3', '$ans4', '$richtigeAns', '$niv')";
+
+    $result = mysqli_query($link, $sql);
+    mysqli_close($link);
+    // Überprüfen, ob die Abfrage erfolgreich war
+    if ($result) {
+        // Erfolgreich eingefügt
+        return true;
+
+    } else {
+        // Fehler beim Einfügen
+        echo "Fehler beim Einfügen: " . mysqli_error($link);
+        return false;
+    }
+
+}
+
+function delete_by_id( $id){
+
+ $link = connect_to_db();
+    // Überprüfen der Verbindung
+    if (!$link) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+// Deine DELETE-Abfrage
+    $sql = "DELETE FROM fragen WHERE id = '$id'";
+
+// Ausführen der SQL-Abfrage
+    $result = mysqli_query($link, $sql);
+
+// Überprüfen, ob die Abfrage erfolgreich war
+    if ($result) {
+        // Anzahl der gelöschten Zeilen abrufen
+        $deletedRows = mysqli_affected_rows($link);
+        mysqli_close($link);
+        // Ausgabe oder Verwendung der Anzahl der gelöschten Zeilen
+         return true;
+    } else {
+        // Fehler beim Löschen
+        return false;
+    }
+
+
+}
