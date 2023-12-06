@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -11,46 +13,16 @@
     <link href="admin_panel/view/header.css" rel="stylesheet">
 </head>
 
-<script>
-    function changeMusik() {
-        var audio1 = document.getElementById("audio1");
-        var audio2 = document.getElementById("audio2");
-
-        if (audio1.paused && audio2.paused){
-            audio1.play();
-        }
-        else if (!audio1.paused && audio2.paused){
-            audio1.pause();
-            audio2.play();
-        }
-        else
-        {
-            audio1.pause();
-            audio2.pause();
-        }
-    }
-
-    function play2() {
-        var audio = document.getElementById("audio2");
-        audio.play();
-        var audio = document.getElementById("audio1");
-        audio.pause();
-    }
-</script>
-
-<body>
+<?php
+    $_SESSION["username"] = "Kevin";
+    $_SESSION["usertops"] = "2"; //Anzahl: Wie oft man schon an der Spitze der Bestenliste gewesen ist
+?>
 
 <?php include "Ressources/templates/header/full_header.php" ?>
 
-<main>
-    <form class="align-content-center" action="index.html" method="get">
-        <input type="text" class="inputField">
-    </form>
-
-    <audio id="audio1" loop src="Ressources\music\music_lofi.mp3"></audio>
-    <audio id="audio2" loop src="Ressources\music\music_dark.mp3"></audio>
-
-    <button onclick="changeMusik()">Musik ändern </button>
-</main>
+<body>
+    <main class="align-content-center">
+        Hallo Welt!
+    </main>
 </body>
 </html>

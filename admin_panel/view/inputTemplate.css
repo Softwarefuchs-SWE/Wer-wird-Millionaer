@@ -37,7 +37,7 @@ button:hover{
 /*Kann auch über die Klasse "knopf" angewendet werden*/
 .knopf:active,
 button:active{
-    box-shadow: 0 0; /*Der Schatten eines Knopfes wir entfernt*/
+    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.25)); /*Der Schatten eines Knopfes wir entfernt*/
 }
 
 /*Style für hohe Knöpfe wie z.B im Hauptmenu*/
@@ -106,7 +106,11 @@ T1 = Typ1 => Breite Knöpfe*/
     align-items: center;
 }
 
+/*Style für runde Knöpfe die im Header sind.*/
+/*T3 = Typ3 => runde Knöpfe*/
 .knopfT3Rund {
     border-radius: 50%;
     background-color: transparent !important;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
