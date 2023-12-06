@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Wer wird Millionär</title>
-    <link href="Stylesheets/inputTemplate.css" rel="stylesheet">
+    <link href="admin_panel/view/inputTemplate.css" rel="stylesheet">
     <link href="admin_panel/view/basics.css" rel="stylesheet">
+    <link href="admin_panel/view/header.css" rel="stylesheet">
 </head>
 <body>
 
