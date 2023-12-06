@@ -76,7 +76,7 @@ T1 = Typ1 => Breite Knöpfe*/
 }
 
 /*Style für große Knöpfe die im refenziereten Menu sind.*/
-/*Diese Knöpfe sollen also nichts machen und haben kein Hover-Effect.*/
+/*Diese Knöpfe sollen also nichts machen und haben keinen Hover-Effect.*/
 /*T2 = Typ2 => schmale Knöpfe*/
 .knopfT2GrossAuswahl{
     font-size: 32px;
