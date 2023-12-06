@@ -7,7 +7,7 @@ Anleitung: Einfach diese Datei, inputTemplate.css und basics.css includieren.
 
 Achtung: Der header-Tag (HTML) und das Stylestheet sind bereist integriert.
 -->
-<header class="header_grid-container debug_border">
+<header class="header_grid-container">
     <div class="header_item_name">
         <label id="nutzername" class="fontsize-20px">Testnutzername (25x&#9733;)</label>
     </div>
