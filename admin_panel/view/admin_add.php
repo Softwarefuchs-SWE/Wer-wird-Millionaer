@@ -1,5 +1,15 @@
 <?php
-include "admin_template.html"
+include "admin_template.html";
+include "C:\Users\herrd\OneDrive\Repository_Dennis\Taschenrechner2\Wer-wird-Millionaer\admin_panel\db_handling_adminpanel\db_handling.php";
+$frageerfolgreich = false;
+if(!empty($_POST)){
+   if(insert_question($_POST)){
+       echo "Frage erfolgreich eingefügt!";
+   }
+   else{
+       echo "Fehler beim Frage einfügen!";
+   }
+}
 
 ?>
 
@@ -7,35 +17,35 @@ include "admin_template.html"
     <label id="text"> Neue Frage eintragen: </label>
     <div class="main_container">
 
-        <form id="checkboxForm">
-            <input id="inputQuestionText"  type="text" name="" value="Bitte geben Sie hier die Fragen ein, die Sie einfügen möchten">
+        <form id="checkboxForm" name="fragen_form" method="post" action="admin_add.php">
+            <input id="inputQuestionText"  type="text" name="fragetext" value="Bitte geben Sie hier die Fragen ein, die Sie einfügen möchten">
             <div class = "checkbox-container round-checkbox ">
-                <input type="text" value="Antwort 1. eingeben">
-                <input   type="checkbox">
+                <input type="text" value="Antwort 1. eingeben" name="ans1">
+                <input   type="checkbox" name="checkbox" value="1">
 
             </div>
 
             <div class="checkbox-container round-checkbox ">
-                <input type="text" value="Antwort 2. eingeben">
-                <input  type="checkbox">
+                <input type="text" value="Antwort 2. eingeben" name="ans2">
+                <input  type="checkbox" name="checkbox" value="2">
 
             </div>
 
             <div class="checkbox-container round-checkbox">
-                <input type="text" value="Antwort 3. eingeben">
-                <input  type="checkbox">
+                <input type="text" value="Antwort 3. eingeben" name="ans3">
+                <input  type="checkbox" name="checkbox" value="3">
             </div>
 
             <div class="checkbox-container round-checkbox ">
-                <input type="text" value="Antwort 4. eingeben">
-                <input  type="checkbox">
+                <input type="text" value="Antwort 4. eingeben" name="ans4">
+                <input  type="checkbox" name="checkbox" value="4">
             </div>
 
             <div id="niv" >
-                <select id="niveauDropdown" name="fragen">
-                    <option value="frage1">Niveau 1</option>
-                    <option value="frage2">Niveau 2</option>
-                    <option value="frage3">Niveau 3</option>
+                <select id="niveauDropdown" name="dropdown">
+                    <option value="1">Niveau 1</option>
+                    <option value="2">Niveau 2</option>
+                    <option value="3">Niveau 3</option>
                 </select>
 
                 <script> document.addEventListener("DOMContentLoaded", function () {
@@ -56,15 +66,14 @@ include "admin_template.html"
                     });
                 </script>
 
-
             </div>
-        </form>
+
     </div>
 
 
-         <form class="buttonBottomContainer">
+         <div class="buttonBottomContainer">
              <input class="knopfT2GrossAuswahl knopf" type="button" name="back" value="Zurück" onclick=" redirectToAdminPanel()" >
-             <input class="knopfT2GrossAuswahl knopf"  type="button" name="confirm" value="Eintragen" onclick=" redirectToAdminPanel()">
+             <input class="knopfT2GrossAuswahl knopf"  type="submit" name="confirm" value="Eintragen" >
 
              <script>
 
@@ -72,14 +81,10 @@ include "admin_template.html"
                      window.location.href = "adminpanel.php";
                  }
              </script>
-         </form>
-
+         </div>
+    </form>
 
 </main>
-
-
-
-
 
 <footer>
 
