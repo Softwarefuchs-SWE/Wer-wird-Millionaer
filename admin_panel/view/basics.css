@@ -24,7 +24,7 @@
     border: 0;
 }
 
-.debug_border *{
+.debug_border, .debug_border *{
     border: 1px dashed red !important;
 }
 
