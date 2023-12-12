@@ -42,21 +42,51 @@ $fragen = get_question_full();
                </form>
 
         <script>
-
-
+            /**
+             * Fügt das Scrollmenü ein und überprüft per Event-listener, ob keine Checkboxen angewählten wurden.
+             *
+             */
             document.addEventListener("DOMContentLoaded", function () {
-                document.querySelectorAll('.scroll-menu .option');
+                const checkboxes = document.querySelectorAll('.scroll-menu .option input[type="checkbox"]');
+                const checkboxArray = Array.from(checkboxes);
+
+                checkboxArray.forEach(function (checkbox) {
+                    checkbox.addEventListener('change', function () {
+                        handleCheckboxChange(this, checkboxArray);
+                    });
+                });
+
+                const form = document.querySelector('form[name="checkboxes"]');
+                form.addEventListener('submit', function (event) {
+                    if (!isAnyCheckboxSelected(checkboxArray)) {
+                        alert("Bitte wählen Sie mindestens eine Checkbox aus.");
+                        event.preventDefault(); // Verhindert das Absenden des Formulars
+                    }
+                });
             });
 
+            function handleCheckboxChange(checkbox, checkboxes) {
+                if (checkbox.checked) {
+                    checkboxes.forEach(function (otherCheckbox) {
+                        if (otherCheckbox !== checkbox) {
+                            otherCheckbox.checked = false;
+                        }
+                    });
+                }
+            }
 
-                function back_  (){
+            function isAnyCheckboxSelected(checkboxArray) {
+                return checkboxArray.some(function (checkbox) {
+                    return checkbox.checked;
+                });
+            }
+
+            function back_  (){
 
                     window.location.href = "adminpanel.php";
                 }
 
             </script>
-
-
 
 
     </main>
