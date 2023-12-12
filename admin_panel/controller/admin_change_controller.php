@@ -13,9 +13,11 @@ return $this->id;
 }
 
 
-public function insert_change_question($array , $id){
-    update_question($array,$id);
-
+public function insert_change_question($array , $id) : bool{
+    if(update_question($array,$id)){
+        return true;
+    }
+     return false;
 }
 
 public function getQuestion() {

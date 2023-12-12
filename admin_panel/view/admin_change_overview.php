@@ -73,7 +73,7 @@ $fragen = get_question_full();
                         }
                     });
                 }
-            }
+            }ü
 
             function isAnyCheckboxSelected(checkboxArray) {
                 return checkboxArray.some(function (checkbox) {

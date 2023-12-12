@@ -20,6 +20,7 @@ if(!empty($_POST['confirm_change_panel'])){
 
     if($controller->insert_change_question($update,$id)){
         echo "Update erfolgreich!";
+        $question = get_question_by_id($id);
     }
 
 }
@@ -37,7 +38,7 @@ if(!empty($_POST['confirm_change_panel'])){
 <main>
     <label  id="text"> Bestehende Frage ändern: </label>
     <div class="main_container">
-        <form id="checkboxForm" action="admin_panel_change.php" method="post">
+        <form id="checkboxForm" action="admin_panel_change.php" method="post" onsubmit="return validateForm()">
 
             <div class="questionHeader">
 
@@ -91,19 +92,27 @@ if(!empty($_POST['confirm_change_panel'])){
                         });
                     });
 
-                    const form = document.querySelector('#checkboxForm');
-                    form.addEventListener('submit', function (event) {
-                        if (!isAnyCheckboxSelected(checkboxes)) {
-                            console.log("Fehler!")
-                            event.preventDefault(); // Verhindert das Absenden des Formulars
-                        }
-                    });
+                    /**
+                     * Einfache Funktion die jede Checkbox überprüft, ob die eine Checkbox nicht
+                     * angeklickt wurde.
+                     * @returns {boolean}, true wenn eine gechecked ist, false keine gechecked
+                     */
+                    function validateForm() {
+                        const checkboxes = document.querySelectorAll('#checkboxForm input[type="checkbox"]');
+                        let isChecked = false;
 
-
-                    function isAnyCheckboxSelected(checkboxes) {
-                        return Array.from(checkboxes).some(function (checkbox) {
-                            return checkbox.checked;
+                        checkboxes.forEach(function (checkbox) {
+                            if (checkbox.checked) {
+                                isChecked = true;
+                            }
                         });
+
+                        if (!isChecked) {
+                            alert("Bitte wählen Sie mindestens eine Checkbox aus.");
+                            return false;
+                        }
+
+                        return true;
                     }
                 </script>
 

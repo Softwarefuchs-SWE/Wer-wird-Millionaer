@@ -17,7 +17,7 @@ if(!empty($_POST)){
     <label id="text"> Neue Frage eintragen: </label>
     <div class="main_container">
 
-        <form id="checkboxForm" name="fragen_form" method="post" action="admin_add.php">
+        <form id="checkboxForm" name="fragen_form" method="post" action="admin_add.php" onsubmit="return validateForm()">
             <input id="inputQuestionText"  type="text" name="fragetext" value="Bitte geben Sie hier die Fragen ein, die Sie einfügen möchten">
             <div class = "checkbox-container round-checkbox ">
                 <input type="text" value="Antwort 1. eingeben" name="ans1">
@@ -64,6 +64,33 @@ if(!empty($_POST)){
                             });
                         });
                     });
+
+                    /**
+                     * Einfache Funktion die jede Checkbox überprüft, ob die eine Checkbox nicht
+                     * angeklickt wurde.
+                     * @returns {boolean}, true wenn eine gechecked ist, false keine gechecked
+                     */
+                    function validateForm() {
+                        const checkboxes = document.querySelectorAll('#checkboxForm input[type="checkbox"]');
+                        let isChecked = false;
+
+                        checkboxes.forEach(function (checkbox) {
+                            if (checkbox.checked) {
+                                isChecked = true;
+                            }
+                        });
+
+                        if (!isChecked) {
+                            alert("Bitte wählen Sie mindestens eine Checkbox aus.");
+                            return false;
+                        }
+
+                        return true;
+                    }
+
+
+
+
                 </script>
 
             </div>
