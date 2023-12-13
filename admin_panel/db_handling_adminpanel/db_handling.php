@@ -1,7 +1,7 @@
 <?php
 
 /**
-Funktion die eine Verbindung zur Datenbank aufbaut
+ * Funktion die eine Verbindung zur Datenbank aufbaut
  */
 function connect_to_db()
 {
@@ -58,7 +58,7 @@ function update_question($fragen , $id) : bool{
 
 
 /**
-Funktion die nur den Fragen text aus der Datenbank holt
+ * Funktion die nur den Fragentext aus der Datenbank holt
  */
 function get_question_label() : array {
 
@@ -81,7 +81,7 @@ function get_question_label() : array {
     return $fragen;
 }
 /**
-Funktion die alle Fragen auf der Datenbank zurückgibt
+ * Funktion die alle Fragen auf der Datenbank zurückgibt
  */
 function get_question_full(){
 
@@ -106,7 +106,7 @@ function get_question_full(){
 
 }
 /**
- Datenbankfunktion die über die ID (Primary-Key) die Fragen
+ * Datenbankfunktion die über die ID (Primary-Key) die Fragen
  * zurückgibt.
  */
 function get_question_by_id( $id) : array{
