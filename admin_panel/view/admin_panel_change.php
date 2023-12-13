@@ -1,7 +1,7 @@
 <?php
-include 'C:\Users\herrd\OneDrive\Repository_Dennis\Taschenrechner2\Wer-wird-Millionaer\admin_panel\controller\admin_change_controller.php';
+include '..\controller\admin_change_controller.php';
 include "admin_template.html";
-include 'C:\Users\herrd\OneDrive\Repository_Dennis\Taschenrechner2\Wer-wird-Millionaer\admin_panel\db_handling_adminpanel\db_handling.php';
+include '..\db_handling_adminpanel\db_handling.php';
 
 $controller = new admin_change_controller();
 $id =-1;
