@@ -1,12 +1,8 @@
 <?php
 include "admin_template.html";
-<<<<<<< Updated upstream
 include "..\db_handling_adminpanel\db_handling.php";
-=======
-include "../db_handling_adminpanel/db_handling.php";
->>>>>>> Stashed changes
 $fragen = get_question_full();
-session_start();
+
 ?>
 
 
@@ -40,7 +36,7 @@ session_start();
         </div>
 
            <div  class="buttonBottomContainer">
-            <input class="knopfT2GrossAuswahl knopf" type="button" name="back" value="Zurück" onclick="back_('adminpanel.php')">
+            <input class="knopfT2GrossAuswahl knopf" type="button" name="back" value="Zurück" onclick="back_()">
             <input class="knopfT2GrossAuswahl knopf"  type="submit" name="confirm" value="Ändern" >
            </div>
                </form>
@@ -85,7 +81,10 @@ session_start();
                 });
             }
 
-            src="script.js";
+            function back_  (){
+
+                    window.location.href = "adminpanel.php";
+                }
 
             </script>
 
