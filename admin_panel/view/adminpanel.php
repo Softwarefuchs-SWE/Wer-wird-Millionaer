@@ -1,8 +1,21 @@
 <?php
+<<<<<<< Updated upstream
 include "admin_template.html";
 include "..\db_handling_adminpanel\db_handling.php";
 $fragen = get_question_label();
+=======
+include "../db_handling_adminpanel/db_handling.php";
+session_start();
+$_SESSION['question_id']=2;
+$_SESSION['admin_check'] = true;
+>>>>>>> Stashed changes
 
+if($_SESSION['admin_check']===false){
+    header("Location: /Wer-wird-Millionaer/admin_panel/view/no_authorization.php");
+    exit;
+}
+$fragen = get_question_label();
+include "admin_template.html";
 ?>
 
 <main>
