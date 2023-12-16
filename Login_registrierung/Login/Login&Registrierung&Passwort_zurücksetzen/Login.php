@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Wer wird Millionär</title>
-    <link href="../Stylesheets/inputTemplate.css" rel="stylesheet">
-    <link href="../Stylesheets/basics.css" rel="stylesheet">
-    <link href="../Stylesheets/login.css" rel="stylesheet">
-</head>
-<body>
-
 <?php
 session_start();
+
 // Verbindung zur Datenbank herstellen (ersetze die Platzhalter durch deine tatsächlichen Daten)
 $servername = "localhost";
 $username = "root";
@@ -36,17 +26,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Überprüfen, ob ein Datensatz gefunden wurde
     if ($result->num_rows > 0) {
         // Anmeldung erfolgreich
-        // Weiterleiten zur Quizseite
+        // Spielerdaten aus dem Resultat extrahieren
+        $row = $result->fetch_assoc();
+        $spielerId = $row['ID'];
 
+        // Spielerdaten in Session-Variablen speichern
+        $_SESSION['spielerId'] = $spielerId;
+        $_SESSION['nutzername'] = $username;
+
+        // Überprüfen, ob der Benutzer ein Admin ist
+        $adminQuery = "SELECT * FROM AdminID WHERE ID = " . $row['ID'];
+        $adminResult = $conn->query($adminQuery);
+
+        if ($adminResult->num_rows > 0) {
+            $_SESSION['admin'] = true;
+        } else {
+            $_SESSION['admin'] = false;
+        }
+
+        // Weiterleiten zur Quizseite
+        header("Location: ../../../admin_panel/view/adminpanel.php");
+        exit();
     } else {
         // Anmeldung fehlgeschlagen
         header("Location: login.php?error=login_failed");
         exit();
     }
 }
+
 $conn->close();
 ?>
-
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Wer wird Millionär</title>
+    <link href="../Stylesheets/inputTemplate.css" rel="stylesheet">
+    <link href="../Stylesheets/basics.css" rel="stylesheet">
+    <link href="../Stylesheets/login.css" rel="stylesheet">
+</head>
+<body>
 <div class="login-container">
     <div class="loginImg">
         <img src="../img_login/Logo.png" alt="Login Image">
