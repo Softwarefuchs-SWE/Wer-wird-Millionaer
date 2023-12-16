@@ -24,6 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lieblingszahl = $_POST["frage3_regestrierung"];
     $passwort = $_POST["password_regestrierung"];
 
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $dbname = "swe_db";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
     try {
         $geburtsdatumObj = new DateTime($geburtsdatum);
         $heute = new DateTime();
@@ -38,17 +45,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Benutzer ist alt genug, um sich zu registrieren
 
         // Erstellen des Benutzernamens (kleingeschriebener Anfangsbuchstabe des Vornamens + Nachnamen)
-        $benutzername = strtolower(substr($vorname, 0, 1)) . ucfirst(strtolower($nachname));
+        $baseUsername = strtolower(substr($vorname, 0, 1)) . ucfirst(strtolower($nachname));
+        $benutzername = $baseUsername;
+        $counter = 1;
+
+        function benutzernameExistiert($conn, $benutzername): bool
+        {
+            $query = "SELECT * FROM Benutzerdaten WHERE Benutzername = '$benutzername'";
+            $result = $conn->query($query);
+            return ($result->num_rows > 0);
+        }
+
+        while (benutzernameExistiert($conn, $benutzername)) {
+            $benutzername = $baseUsername . $counter;
+            $counter++;
+        }
+
         $_SESSION['nutzername']= $benutzername;
         $_SESSION['passwort']= $passwort;
 
-        // Verbindung zur Datenbank herstellen (ersetze die Platzhalter durch deine tatsächlichen Daten)
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
-        $dbname = "swe_db";
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
 
         // Überprüfen, ob die Verbindung erfolgreich hergestellt wurde
         if ($conn->connect_error) {
