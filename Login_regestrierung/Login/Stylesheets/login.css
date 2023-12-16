@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--hintergrund-weiß);
+}
+
+.login-container {
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    background-color: var(--hintergrund-weiß);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container img {
+    box-shadow: #f4f4f4;
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+.logoImg {
+    width: 80px;
+    position: fixed;
+    right: 0;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 300px; /* Ändere die Breite nach Bedarf */
+}
+
+.inputField {
+    margin-bottom: 20px; /* Ändere den Abstand zwischen den Inputfeldern nach Bedarf */
+    justify-content: initial;
+}
+
+input {
+    border: none; /* Entferne die Border des Inputfelds */
+    border-bottom: 1px solid #000; /* Füge eine unterstrichene Linie hinzu */
+    padding: 5px; /* Ändere den Innenabstand nach Bedarf */
+    width: 70%; /* Setze die Breite auf 70% */
+    box-sizing: border-box; /* Berechne die Breite inklusive Padding und Border */
+    align-self: flex-start; /* Links ausrichten */
+}
+
+label {
+    display: none; /* Verstecke das Label, da der Placeholder verwendet wird */
+}
+
+
+
+.anmeldeKnopf {
+    margin-top: 0px ;
+    margin-left: 0!important;
+    width: 300px;
+    height: 30px !important;
+}
+
+.anmeldeKnopf:hover {
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.links a {
+    color: var(--primär-hell);
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.footer {
+    margin-top: 20px;
+    position: fixed;
+    bottom: 15px;
+}
+
+.footer a {
+    color: var(--primär-hell);
+}
+
+.separator {
+    color: var(--primär-hell);
+    margin: 0 5px;
+}
+
+.inputFieldLessHeight {
+    height: 20px;
+}
+
+.überschriftPasswortZurücksetzen {
+    font-size: 22px;
+    color: var(--primär-dunkel);
+}
+
+.error-message {
+    font-size: 15px;
+    color: red;
+}
+
+.error-message2 {
+    color: red;
+    font-size: 10px;
+}
