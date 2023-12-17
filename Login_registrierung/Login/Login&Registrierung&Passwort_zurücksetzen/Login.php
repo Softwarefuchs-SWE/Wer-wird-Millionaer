@@ -30,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $adminResult = $conn->query($adminQuery);
 
         if ($adminResult->num_rows > 0) {
-            $_SESSION['admin'] = true;
+            $_SESSION['admin_check'] = true;
         } else {
-            $_SESSION['admin'] = false;
+            $_SESSION['admin_check'] = false;
         }
 
         // Weiterleiten zur Quizseite
