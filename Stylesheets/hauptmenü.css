@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+}
+
+header{
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 11%;
+    margin-top : 20%;
+}
+
+.header_item_fhlogo{
+    position: fixed;
+    right: 0px;
+    top: 44px;
+}
+
+#Ton{
+    box-shadow: none;
+    background-color: white;
+    position: fixed;
+    right: 2px;
+    top: 2px;
+    width: 40px;
+    height: 40px;
+}
+
+#Hilfe{
+    box-shadow: none;
+    background-color: white;
+    position: fixed;
+    right: 42px;
+    top: 2px;
+    width: 40px;
+    height: 40px;
+}
+
+.header_item_name{
+    position: fixed;
+    top: 2px;
+    left: 2px;
+}
+
+.header_item_logo{
+    position: fixed;
+    justify-content: center;
+    top: 20px;
+}
+
+#headline{
+    text-decoration: underline;
+    color: #00B5AD;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.main_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 360px;
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#bestenliste{
+    background-color: #046E69;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#bestenliste table{
+    max-width: 212px;
+}
+
+#bestenliste table td + td{
+    border-left: 1px solid white;
+}
+
+#bestenliste table td{
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+}
+
+.sub_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+a {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+a + a {
+    border-left: 2px solid #00B5AD;
+}

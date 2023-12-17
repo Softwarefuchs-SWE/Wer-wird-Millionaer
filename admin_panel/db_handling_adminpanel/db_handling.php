@@ -5,7 +5,7 @@
  */
 function connect_to_db()
 {
-    $link = mysqli_connect("localhost", "root", "ihesp", "swe_db");
+    $link = mysqli_connect("localhost", "root", "132874", "swe_db");
 
     if (!$link)
     {
