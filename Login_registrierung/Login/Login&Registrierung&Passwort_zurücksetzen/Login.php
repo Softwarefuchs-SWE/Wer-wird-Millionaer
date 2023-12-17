@@ -1,18 +1,9 @@
 <?php
 session_start();
 
-// Verbindung zur Datenbank herstellen (ersetze die Platzhalter durch deine tatsächlichen Daten)
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "swe_db";
+include ('../../db_handling_login/db_login.php');
+$conn = connect_to_db();
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Überprüfen, ob die Verbindung erfolgreich hergestellt wurde
-if ($conn->connect_error) {
-    die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
-}
 
 // Überprüfen der Anmeldedaten
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -39,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $adminResult = $conn->query($adminQuery);
 
         if ($adminResult->num_rows > 0) {
-            $_SESSION['admin'] = true;
+            $_SESSION['admin_check'] = true;
         } else {
-            $_SESSION['admin'] = false;
+            $_SESSION['admin_check'] = false;
         }
 
         // Weiterleiten zur Quizseite

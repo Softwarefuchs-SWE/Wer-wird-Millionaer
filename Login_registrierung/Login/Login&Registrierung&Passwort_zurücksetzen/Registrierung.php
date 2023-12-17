@@ -12,6 +12,9 @@
 
 <?php
 session_start();
+include ('../../db_handling_login/db_login.php');
+
+$conn = connect_to_db();
 
 
 // Überprüfen, ob das Formular abgesendet wurde
@@ -24,12 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lieblingszahl = $_POST["frage3_regestrierung"];
     $passwort = $_POST["password_regestrierung"];
 
-    $servername = "localhost";
+    /*$servername = "localhost";
     $username = "root";
     $password = "root";
     $dbname = "swe_db";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname);*/
 
     try {
         $geburtsdatumObj = new DateTime($geburtsdatum);
