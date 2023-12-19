@@ -42,6 +42,9 @@
         </div>
         <?php
         session_start();
+        /**
+         * Fehlermeldung ausgabe
+         */
         if (isset($_GET['error']) && $_GET['error'] == 'reset_failed') {
             echo '<p class="error-message">Deine Antworten sind nicht korrekt</p>';
         }

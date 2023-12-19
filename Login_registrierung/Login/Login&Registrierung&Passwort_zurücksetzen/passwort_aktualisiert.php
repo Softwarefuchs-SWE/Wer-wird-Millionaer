@@ -16,6 +16,9 @@
 </div>
     <?php
     session_start();
+    /**
+     * Ausgabe des neuen Passworts
+     */
     if (isset($_GET['password'])) {
         $neues_passwort = htmlspecialchars($_GET['password']);
         echo "<h1 class= überschriftPasswortZurücksetzen>Glückwunsch, dein Passwort wurde aktualisiert!</h1>";

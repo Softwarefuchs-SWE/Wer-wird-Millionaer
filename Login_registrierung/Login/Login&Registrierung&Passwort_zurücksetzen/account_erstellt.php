@@ -19,6 +19,9 @@
     </div>
     <?php
     session_start();
+    /**
+     * Meldung, dass der Account erfolgreich erstellt wurde. Mit dem gezeigten Nutzernamen und Passwort kann sich der User jetzt anmelden.
+     */
         echo "<h1 class= überschriftPasswortZurücksetzen>Glückwunsch, dein Account wurde erfolgreich erstellt!</h1>";
         echo "<p>Dein Name:"; echo $_SESSION["nutzername"]; echo "</p>";
         echo "<p>Dein Passwort:"; echo $_SESSION["passwort"]; echo "</p>";

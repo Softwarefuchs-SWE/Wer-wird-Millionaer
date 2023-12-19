@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * Verbindung zu DB wird aufgebaut
+ */
 function connect_to_db()
 {
     $link = mysqli_connect("localhost", "root", "root", "swe_db");

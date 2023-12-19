@@ -1,20 +1,38 @@
 <?php
+/**
+ * Startet die PHP-Sitzung für die Verwaltung von Benutzersitzungsdaten.
+ */
 session_start();
-
+/**
+ * Stellt die Verbindung zur Datenbank her und gibt die Verbindungsinstanz zurück.
+ *
+ * @return mysqli Die Verbindungsinstanz zur Datenbank.
+ */
 include ('../../db_handling_login/db_login.php');
 $conn = connect_to_db();
 
 
-// Überprüfen der Anmeldedaten
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // SQL-Abfrage, um Benutzerdaten abzurufen
+    /**
+     * Führt eine SQL-Abfrage aus, um Benutzerdaten basierend auf Benutzername und Passwort abzurufen.
+     *
+     * @param string $username Der Benutzername, der in der Abfrage verwendet wird.
+     * @param string $password Das Passwort, das in der Abfrage verwendet wird.
+     * @param mysqli $conn Die Datenbankverbindungsinstanz, auf der die Abfrage ausgeführt wird.
+     *
+     * @return mysqli_result|false Gibt das Ergebnis der SQL-Abfrage zurück, das ein mysqli_result-Objekt mit den abgerufenen Daten sein kann,
+     * oder false, wenn ein Fehler bei der Ausführung der Abfrage aufgetreten ist.
+     */
     $sql = "SELECT * FROM Benutzerdaten WHERE Benutzername = '$username' AND Passwort = '$password'";
     $result = $conn->query($sql);
 
-    // Überprüfen, ob ein Datensatz gefunden wurde
+    /**
+     * Überprüft, ob ein Datensatz gefunden wurde
+     */
     if ($result->num_rows > 0) {
         // Anmeldung erfolgreich
         // Spielerdaten aus dem Resultat extrahieren
@@ -29,22 +47,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $adminQuery = "SELECT * FROM AdminID WHERE ID = " . $row['ID'];
         $adminResult = $conn->query($adminQuery);
 
+        /**
+         * Überprüft, ob der User ein Admin ist
+         */
         if ($adminResult->num_rows > 0) {
             $_SESSION['admin_check'] = true;
         } else {
             $_SESSION['admin_check'] = false;
         }
 
-        // Weiterleiten zur Quizseite
+        /**
+         * Weiterleiten zur Quizseite
+         */
         header("Location: ../../../admin_panel/view/adminpanel.php");
         exit();
+
+        /**
+         * Wenn die Anmeldung fehlschlägt, wird ein Fehler ausgegeben.
+         */
     } else {
-        // Anmeldung fehlgeschlagen
         header("Location: login.php?error=login_failed");
         exit();
     }
 }
-
+/**
+ * Schließt die Verbindung zur Datenbank.
+ */
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -74,7 +102,9 @@ $conn->close();
         </div>
 
         <?php
-        // Überprüfe, ob ein Fehler aufgetreten ist (z.B., Anmeldung fehlgeschlagen)
+        /**
+         * Ausgabe der Fehlermeldung auf der Seite
+         */
         if (isset($_GET['error']) && $_GET['error'] == 'login_failed') {
             echo '<p class="error-message">Nutzername/Passwort ist falsch</p>';
         }
