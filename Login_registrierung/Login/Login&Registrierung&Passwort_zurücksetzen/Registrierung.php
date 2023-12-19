@@ -93,7 +93,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $_SESSION['nutzername']= $benutzername;
-        $_SESSION['passwort']= $passwort;
 
 
         // SQL-Abfrage, um den neuen Benutzer in die Datenbank einzufügen
