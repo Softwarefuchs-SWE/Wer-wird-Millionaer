@@ -7,6 +7,9 @@
 .header_item_name {
     grid-column: 1 / span 2;
     grid-row: 1;
+
+    overflow-wrap: anywhere;
+    overflow: hidden;
 }
 
 .header_item_knöpfe {

@@ -9,7 +9,7 @@ Achtung: Der header-Tag (HTML) und der audioManager.js sind bereist integriert.
 -->
 <header class="header_grid-container">
     <div class="header_item_name">
-        <label id="nutzername" class="fontsize-20px"><?php echo $_SESSION["username"] .  " (" . $_SESSION["usertops"]?>&#9733;)</label>
+        <label id="nutzername" class="fontsize-20px"><?php echo ($_SESSION["nutzername"]??"Gast") .  " (" . ($_SESSION["usertops"]??"...")?>&#9733;)</label>
     </div>
 
     <div class="header_item_logo align-content-center">

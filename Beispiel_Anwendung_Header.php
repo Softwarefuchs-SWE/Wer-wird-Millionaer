@@ -14,8 +14,8 @@
 </head>
 
 <?php
-    $_SESSION["username"] = "Kevin";
-    $_SESSION["usertops"] = "2"; //Anzahl: Wie oft man schon an der Spitze der Bestenliste gewesen ist
+    //$_SESSION["nutzername"] = "Kevin";
+    //$_SESSION["usertops"] = "2"; //Anzahl: Wie oft man schon an der Spitze der Bestenliste gewesen ist
 ?>
 
 <?php include "Ressources/templates/header/full_header.php" ?>

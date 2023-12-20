@@ -20,3 +20,8 @@ function changeMusik() {
 
     /*song.currentTime = song.currentTime;*/
 }
+
+function test(){
+    var audio1 = document.getElementById("background_music1");
+    audio1.play();
+}
