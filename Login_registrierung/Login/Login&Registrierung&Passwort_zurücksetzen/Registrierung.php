@@ -120,6 +120,7 @@ $conn->close();
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Wer wird Millionär</title>
     <script src="login.js"></script>
