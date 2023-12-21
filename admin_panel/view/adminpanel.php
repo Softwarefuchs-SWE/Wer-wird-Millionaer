@@ -1,6 +1,6 @@
 <?php
 include "admin_template.html";
-include "..\db_handling_adminpanel\db_handling.php";
+include "../db_handling_adminpanel/db_handling.php";
 $fragen = get_question_label();
 
 ?>

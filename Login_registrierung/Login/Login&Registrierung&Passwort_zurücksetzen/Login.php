@@ -56,7 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             $_SESSION['admin_check'] = false;
-            header("Location: ../../../Hauptmenü/hauptmenü.php");
+            header("Location: ../../../admin_panel/view/adminpanel.php");
+            //header("Location: ../../../Hauptmenü/hauptmenü.php");
             exit();
         }
 
