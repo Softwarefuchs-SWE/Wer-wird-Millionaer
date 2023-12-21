@@ -52,15 +52,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          */
         if ($adminResult->num_rows > 0) {
             $_SESSION['admin_check'] = true;
+            header("Location: ../../../admin_panel/view/adminpanel.php");
+            exit();
         } else {
             $_SESSION['admin_check'] = false;
+            header("Location: ../../../Hauptmenü/hauptmenü.php");
+            exit();
         }
-
-        /**
-         * Weiterleiten zur Quizseite
-         */
-        header("Location: ../../../admin_panel/view/adminpanel.php");
-        exit();
 
         /**
          * Wenn die Anmeldung fehlschlägt, wird ein Fehler ausgegeben.
