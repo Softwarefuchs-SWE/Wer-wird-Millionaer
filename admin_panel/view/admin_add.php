@@ -1,6 +1,5 @@
 <?php
-include "admin_template.html";
-include "../db_handling_adminpanel/db_handling.php";
+
 $frageerfolgreich = false;
 if(!empty($_POST)){
    if(insert_question($_POST)){
