@@ -11,7 +11,9 @@ CREATE TABLE IF NOT EXISTS Benutzerdaten
   Name_erstes_Haustier VARCHAR(100),
   Nachname_Mutter VARCHAR(100),
   Lieblingszahl INT,
-  Passwort VARCHAR(100)
+  Passwort VARCHAR(100),
+  Punktzahl INT,
+  Anz_Monats_Bester INT
 );
 
 CREATE TABLE IF NOT EXISTS AdminID
