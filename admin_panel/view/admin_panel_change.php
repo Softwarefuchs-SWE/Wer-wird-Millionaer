@@ -1,7 +1,15 @@
 <?php
+
 include '..\controller\admin_change_controller.php';
 include "admin_template.html";
 include '..\db_handling_adminpanel\db_handling.php';
+
+session_start();
+/**
+ * Logik, die überprüft, ob die richtigen Daten vom
+ * User eingetragen wurden, und die geänderte Fragen direkt
+ * anzeigt
+ */
 
 $controller = new admin_change_controller();
 $id =-1;
@@ -42,7 +50,7 @@ if(!empty($_POST['confirm_change_panel'])){
 
             <div class="questionHeader">
 
-                <input id="inputQuestionText" type="text" name="frage" value="<?php echo $fragentext?>" style="word-wrap: break-word;">
+                <input id="inputQuestionText" type="text" onfocus="clearDefault(this, '<?php echo $fragentext?>')" name="frage" value="<?php echo $fragentext?>" style="word-wrap: break-word;">
             </div>
 
             <div class = "checkbox-container ">
@@ -113,6 +121,18 @@ if(!empty($_POST['confirm_change_panel'])){
                         }
 
                         return true;
+                    }
+
+                    /**
+                     *
+                      *@param input das HTML Element, wo der Value-Default Text ausgeblendet werden soll,
+                     * wenn der User draufklickt.
+                     * @param placeholder String von HTML Element zur überprüfung.
+                     */
+                    function clearDefault(input, placeholder) {
+                        if (input.value === placeholder) {
+                            input.value = "";
+                        }
                     }
                 </script>
 

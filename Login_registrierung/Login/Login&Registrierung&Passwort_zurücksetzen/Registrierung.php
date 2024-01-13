@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Wer wird Millionär</title>
-    <script src="login.js"></script>
-    <link href="../Stylesheets/inputTemplate.css" rel="stylesheet">
-    <link href="../Stylesheets/basics.css" rel="stylesheet">
-    <link href="../Stylesheets/login.css" rel="stylesheet">
-</head>
-<body>
-
 <?php
+/**
+ * Startet die PHP-Sitzung für die Verwaltung von Benutzersitzungsdaten.
+ */
 session_start();
+/**
+ * Stellt die Verbindung zur Datenbank her und gibt die Verbindungsinstanz zurück.
+ *
+ * @return mysqli Die Verbindungsinstanz zur Datenbank.
+ */
+include ('../../db_handling_login/db_login.php');
+$conn = connect_to_db();
 
 
-// Überprüfen, ob das Formular abgesendet wurde
+/**
+ * Überprüft, ob das Formular abgesendet wurde.
+ */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $vorname = $_POST["vorname"];
     $nachname = $_POST["nachname"];
@@ -24,13 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lieblingszahl = $_POST["frage3_regestrierung"];
     $passwort = $_POST["password_regestrierung"];
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbname = "swe_db";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
+    /**
+     * Versucht das Alter des users herrauszufinden.
+     */
     try {
         $geburtsdatumObj = new DateTime($geburtsdatum);
         $heute = new DateTime();
@@ -41,14 +38,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    if ($alter >= 15) {
-        // Benutzer ist alt genug, um sich zu registrieren
 
-        // Erstellen des Benutzernamens (kleingeschriebener Anfangsbuchstabe des Vornamens + Nachnamen)
-        $baseUsername = strtolower(substr($vorname, 0, 1)) . ucfirst(strtolower($nachname));
+    /**
+     * Überprüft, ob der User alt genug ist.
+     * Wenn ja, wird ein uniquer benutzername aus generiert und der Benutzername mit dem entsprechenden Passwort wird in einer Session gespeichert.
+     * Wenn alles geklappt hat, wird der Benutzer der DB hinzugefügt
+     * Sonst wird ein Fehler ausgegeben
+     */
+    if ($alter >= 15) {
+
+        /**
+         * Generiert Usernamen und prüft ob die Eingaben korrekt sind
+         */
+        function generateBaseUsername($vorname, $nachname) {
+            if (!ctype_alpha($vorname)) {
+                header("Location: Registrierung.php?error=name_failed");
+                exit();
+            }
+
+            // Überprüfen, ob der Nachname nur Buchstaben enthält
+            if (!ctype_alpha($nachname)) {
+                header("Location: Registrierung.php?error=name_failed");
+                exit();
+            }
+            $vornameLetters = preg_replace("/[^a-zA-Z]/", "", $vorname); // Nur Buchstaben im Vornamen zulassen
+            $nachnameLetters = preg_replace("/[^a-zA-Z]/", "", $nachname); // Nur Buchstaben im Nachnamen zulassen
+
+            $baseUsername = strtolower(substr($vornameLetters, 0, 1)) . ucfirst(strtolower($nachnameLetters));
+
+            return $baseUsername;
+        }
+
+        $baseUsername = generateBaseUsername($vorname, $nachname);
         $benutzername = $baseUsername;
         $counter = 1;
 
+
+        /**
+         * Prüft, ob der Username existiert
+         */
         function benutzernameExistiert($conn, $benutzername): bool
         {
             $query = "SELECT * FROM Benutzerdaten WHERE Benutzername = '$benutzername'";
@@ -56,20 +84,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             return ($result->num_rows > 0);
         }
 
+        /**
+         * MAcht den Usernamen unique
+         */
         while (benutzernameExistiert($conn, $benutzername)) {
             $benutzername = $baseUsername . $counter;
             $counter++;
         }
 
         $_SESSION['nutzername']= $benutzername;
-        $_SESSION['passwort']= $passwort;
 
-
-
-        // Überprüfen, ob die Verbindung erfolgreich hergestellt wurde
-        if ($conn->connect_error) {
-            die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
-        }
 
         // SQL-Abfrage, um den neuen Benutzer in die Datenbank einzufügen
         $sql = "INSERT INTO Benutzerdaten (Vorname, Nachname, Geburtstag, Name_erstes_Haustier, Nachname_Mutter, Lieblingszahl, Passwort, Benutzername) VALUES ('$vorname', '$nachname', '$geburtsdatum', '$name_erstes_haustier', '$nachname_mutter', $lieblingszahl, '$passwort', '$benutzername')";
@@ -84,15 +108,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
 
-        $conn->close();
     } else {
         // Benutzer ist nicht alt genug
         header("Location: Registrierung.php?error=age_failed");
         exit();
     }
 }
+$conn->close();
 ?>
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Wer wird Millionär</title>
+    <script src="login.js"></script>
+    <link href="../Stylesheets/inputTemplate.css" rel="stylesheet">
+    <link href="../Stylesheets/basics.css" rel="stylesheet">
+    <link href="../Stylesheets/login.css" rel="stylesheet">
+</head>
+<body>
 <div class="login-container">
     <div class="loginImg">
         <img src="../img_login/Logo.png" alt="Login Image">
@@ -108,12 +144,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="nachname"></label>
             <input type="text" id="nachname" name="nachname" placeholder="Nachname" required>
         </div>
+        <?php
+        /**
+         * Fehlermeldung name
+         */
+        if (isset($_GET['error']) && $_GET['error'] == 'name_failed') {
+            echo '<p class="error-message2 inputField inputFieldLessHeight">Vorname oder Nachname beinhaltet nicht erlaubte Zeichen</p>';
+        }
+        ?>
         <div class="inputField inputFieldLessHeight">
             <label for="geburtsdatum"></label>
             <input type="text" id="geburtsdatum" name="geburtsdatum" placeholder="Geburtsdatum (D.M.Y)" required>
         </div>
         <?php
-        // Überprüfe, ob ein Fehler aufgetreten ist (z.B., Anmeldung fehlgeschlagen)
+        /**
+         * Fehlermeldung age
+         */
         if (isset($_GET['error']) && $_GET['error'] == 'age_failed') {
             echo '<p class="error-message2 inputField inputFieldLessHeight">Du musst äter als 15 jahre sein</p>';
         }
@@ -128,7 +174,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="inputField inputFieldLessHeight">
             <label for="frage3_regestrierung"></label>
-            <input type="text" id="frage3_regestrierung" name="frage3_regestrierung" placeholder="Deine Lieblingszahl" required>
+            <input type="text" id="frage3_regestrierung" name="frage3_regestrierung" pattern="[0-9]+" placeholder="Deine Lieblingszahl" required>
         </div>
         <div class="inputField inputFieldLessHeight">
             <label for="password_regestrierung"></label>

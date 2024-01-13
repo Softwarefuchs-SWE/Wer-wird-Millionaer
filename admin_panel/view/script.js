@@ -1,18 +1,9 @@
+/**
+ * Einfach Funktion die eine neue PhP-Datei aufruft.
+ * @param pfad ,wohin gesprungen werden soll / PhP-Datei
+ */
+function  back_(pfad){
 
-document.addEventListener("DOMContentLoaded", function () {
-    const checkboxes = document.querySelectorAll('.scroll-menu .checkScroll');
+    window.location.href=pfad;
 
-    function handleCheckboxChange(checkbox) {
-        // Wenn die aktuelle Checkbox aktiviert ist,
-        // deaktiviere alle anderen Checkboxes
-        if (checkbox.checked) {
-            checkboxes.forEach(function (otherCheckbox) {
-                if (otherCheckbox !== checkbox) {
-                    otherCheckbox.checked = false;
-                }
-            });
-        }
-    }
-});
-
-
+}

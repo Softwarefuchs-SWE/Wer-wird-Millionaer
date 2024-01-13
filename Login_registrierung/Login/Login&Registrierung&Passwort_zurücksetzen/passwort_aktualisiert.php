@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Wer wird Millionär</title>
     <script src="login.js"></script>
@@ -16,6 +17,9 @@
 </div>
     <?php
     session_start();
+    /**
+     * Ausgabe des neuen Passworts
+     */
     if (isset($_GET['password'])) {
         $neues_passwort = htmlspecialchars($_GET['password']);
         echo "<h1 class= überschriftPasswortZurücksetzen>Glückwunsch, dein Passwort wurde aktualisiert!</h1>";

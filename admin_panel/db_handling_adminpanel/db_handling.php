@@ -5,7 +5,7 @@
  */
 function connect_to_db()
 {
-    $link = mysqli_connect("localhost", "root", "132874", "swe_db");
+    $link = mysqli_connect("localhost", "root", "root", "swe_db");
 
     if (!$link)
     {
@@ -18,6 +18,12 @@ function connect_to_db()
     return $link;
 }
 
+/**
+ * @param $fragen, Array mit den Fragen/Antworten/Ids vom Kontroller
+ * @param $id, die Fragen ID, dass dieselbe Frage upgedatet wird, nicht einfach nur eine neue Frage
+ * eingefügt wird.
+ * @return bool, true, wenn update erfolgreich
+ */
 function update_question($fragen , $id) : bool{
 
     $link = connect_to_db();
