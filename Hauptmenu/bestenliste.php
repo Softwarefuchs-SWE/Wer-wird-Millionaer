@@ -24,7 +24,7 @@ $topuser_data = mysqli_query($link, $sql);
 <body>
 <header class="header_grid-container">
     <div class="header_item_name">
-        <label id="nutzername" class="fontsize-20px"><?php echo $_SESSION["username"] .  " (" . $_SESSION["usertops"]?>&#9733;)</label>
+        <label id="nutzername" class="fontsize-20px"><?php echo $_SESSION["nutzername"] .  " (" . $_SESSION["usertops"]?>&#9733;)</label>
     </div>
 
     <button id="Ton" class="knopfT3Rund" onclick="changeMusik()">
@@ -58,7 +58,7 @@ $topuser_data = mysqli_query($link, $sql);
 </div>
 <div class="sub_container">
     <section>
-        <button class="knopfT2Gross" onclick="location.href = 'hauptmenü.php';">Spielen</button>
+        <button class="knopfT2Gross" onclick="location.href = 'hauptmenu.php';">Spielen</button>
         <button class="knopfT2GrossAuswahl">Bestenliste</button>
     </section>
 </div>

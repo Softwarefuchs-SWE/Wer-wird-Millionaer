@@ -15,17 +15,9 @@ session_start();
 
 <body>
 
-<?php
-/*
- * Delete me
- */
-$_SESSION["username"] = "Kevin";
-$_SESSION["usertops"] = "2"; //Anzahl: Wie oft man schon an der Spitze der Bestenliste gewesen ist
-?>
-
 <header class="header_grid-container">
     <div class="header_item_name">
-        <label id="nutzername" class="fontsize-20px"><?php echo $_SESSION["username"] .  " (" . $_SESSION["usertops"]?>&#9733;)</label>
+        <label id="nutzername" class="fontsize-20px"><?php echo $_SESSION["nutzername"] .  " (" . $_SESSION["usertops"]?>&#9733;)</label>
     </div>
 
     <button id="Ton" class="knopfT3Rund" onclick="changeMusik()">
