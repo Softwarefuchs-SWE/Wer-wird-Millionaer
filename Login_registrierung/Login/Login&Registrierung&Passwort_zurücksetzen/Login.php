@@ -39,9 +39,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         $spielerId = $row['ID'];
 
+
+
         // Spielerdaten in Session-Variablen speichern
         $_SESSION['spielerId'] = $spielerId;
         $_SESSION['nutzername'] = $username;
+
+        $link =connect_to_db();
+        $db_monat = $link->query("SELECT Monats_Bester FROM Benutzerdaten WHERE ID = $spielerId");
+        $_SESSION['usertops'] = mysqli_fetch_assoc($db_monat)['Monats_Bester'];
 
         // Überprüfen, ob der Benutzer ein Admin ist
         $adminQuery = "SELECT * FROM AdminID WHERE ID = " . $row['ID'];
@@ -52,15 +58,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          */
         if ($adminResult->num_rows > 0) {
             $_SESSION['admin_check'] = true;
+            header("Location: ../../../admin_panel/view/adminpanel.php");
+            exit();
         } else {
             $_SESSION['admin_check'] = false;
+            //header("Location: ../../../admin_panel/view/adminpanel.php");
+            header("Location: ../../../Hauptmenü/hauptmenü.php");
+            exit();
         }
-
-        /**
-         * Weiterleiten zur Quizseite
-         */
-        header("Location: ../../../admin_panel/view/adminpanel.php");
-        exit();
 
         /**
          * Wenn die Anmeldung fehlschlägt, wird ein Fehler ausgegeben.
@@ -70,6 +75,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
+
+// ------- Bestimmen wer monatlicher bester ist und das in der Bestenliste aktualisieren ----------
+
+$link = connect_to_db();
+$monat_db = $link->query("SELECT monat FROM swe_db.monat");
+
+$monat = date('n');
+
+if($monat != $monat_db) {
+    monatsbester($monat);
+}
+
+function monatsbester ($monat) {
+    $link = connect_to_db();
+    $link->query("UPDATE monat SET monat = '$monat'");
+    $link->query("UPDATE Benutzerdaten SET Monats_Bester = Monats_Bester + 1 WHERE Punktzahl = (SELECT MAX(Punktzahl) FROM Benutzerdaten);");
+    $link->query("UPDATE Benutzerdaten SET Punktzahl = 0;");
+}
+
+
 /**
  * Schließt die Verbindung zur Datenbank.
  */

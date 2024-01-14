@@ -1,8 +1,8 @@
 <?php
+include '../controller/admin_change_controller.php';
 
-include '..\controller\admin_change_controller.php';
 include "admin_template.html";
-include '..\db_handling_adminpanel\db_handling.php';
+include '../db_handling_adminpanel/db_handling.php';
 
 session_start();
 /**

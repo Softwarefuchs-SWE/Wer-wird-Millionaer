@@ -20,7 +20,6 @@ function connect_to_db()
   return $link;
 }
 
-// Stellt verbindung zur Datenbank her.
 $link = connect_to_db();
 
 $sql = "SELECT Frage, Antwort_1, Antwort_2, Antwort_3, Antwort_4
@@ -44,6 +43,21 @@ while ($row = mysqli_fetch_assoc($result))
     echo "<td>" . $value . "</td>" . "<br>";
   }
   echo "</tr>" . "<br>";
+}
+
+$monat_db = $link->query("SELECT monat FROM swe_db.monat");
+
+$monat = date('n');
+
+if($monat != $monat_db) {
+  monatsbester($monat);
+}
+
+function monatsbester ($monat) {
+  $link = connect_to_db();
+  $link->query("UPDATE monat SET monat = '$monat'");
+  $link->query("UPDATE Benutzerdaten SET Monats_Bester = Monats_Bester + 1 WHERE Punktzahl = (SELECT MAX(Punktzahl) FROM Benutzerdaten);");
+  $link->query("UPDATE Benutzerdaten SET Punktzahl = 0;");
 }
 
 // Schließt die mysqli verbindung
