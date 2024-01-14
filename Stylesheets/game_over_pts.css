@@ -1,0 +1,14 @@
+.gameOverBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.noMarginTop {
+    margin-top: 0;
+}
+.noMarginBot {
+    margin-bottom: 0;
+}
+.dark_FH_text {
+    color: #046E69;
+}

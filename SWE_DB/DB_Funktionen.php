@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Funktion zur Herstellung einer Datenbankverbindung
+ * @return mysqli - Gibt ein MySQLi-Verbindungsobjekt bei Erfolg oder false bei einem Fehler zurück
+ */
 function connect_to_db()
 {
   $link = mysqli_connect("localhost", "root", "123", "swe_db");
@@ -10,12 +14,13 @@ function connect_to_db()
     exit();
   }
 
+  // Setzt das charset auf utf8.
   mysqli_set_charset($link, "utf8");
 
   return $link;
 }
 
-
+// Stellt verbindung zur Datenbank her.
 $link = connect_to_db();
 
 $sql = "SELECT Frage, Antwort_1, Antwort_2, Antwort_3, Antwort_4
@@ -31,6 +36,7 @@ if (!$result)
   exit();
 }
 
+// Gibt 3 Fragen der Schwierigkeit 1 aus.
 while ($row = mysqli_fetch_assoc($result))
 {
   foreach ($row as $value)
@@ -40,4 +46,5 @@ while ($row = mysqli_fetch_assoc($result))
   echo "</tr>" . "<br>";
 }
 
+// Schließt die mysqli verbindung
 mysqli_close($link);
