@@ -13,21 +13,21 @@ session_start();
     <script src="../Ressources/audioManager.js"></script>
 </head>
 <body>
-<header class="header_grid-container">
-    <div class="header_item_name">
-        <label id="nutzername" class="fontsize-20px"><?php echo $_SESSION["username"] .  " (" . $_SESSION["usertops"]?>&#9733;)</label>
-    </div>
-    <div class="header_item_logo align-content-center">
-        <h1 id="headline">Impressum</h1>
-    </div>
-</header>
+<?php
+    include ("../Ressources/templates/header/onlyName_header.php")
+?>
+
 <div class="main_container">
-    <blockquote>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-        dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-    </blockquote>
+    <h2>Angaben gemäß § 5 TMG:</h2>
+    <p>Elysee & Arnold GmbH.<br>Student<br>Max Mustermann</p>
+    <h3>Postanschrift:</h3>
+    <p>Musterstraße 1<br>11111 Musterstadt<br></p>
+    <h3>Kontakt:</h3>
+    <p>Telefon: 1111111111111<br>Telefax: 1111111111111<br>E-Mail: example@example.com</p>
+    <h3>Vertreten durch:</h3>
+    <p>Elysee<br>Arnold<br></p>
+    <h3>Urheberrechtliche Hinweise</h3>
+    <p>alles meins<br></p>
 </div>
 <div class="sub_container">
     <section>

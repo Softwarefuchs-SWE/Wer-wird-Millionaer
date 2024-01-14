@@ -40,7 +40,7 @@ $topuser_data = mysqli_query($link, $sql);
         <?php
         /*
          * Gibt die 10 bestplatzierten User in einer Tabelle bestehen aus Platzierung, Usernamen und erreichter Punktzahl aus.
-         * Gibt es weniger als 10 Spieler bleiben die entsprechenden Zeilen abgesehen von der Inexierung leer.
+         * Gibt es weniger als 10 Spieler bleiben die entsprechenden Zeilen abgesehen von der Indexierung leer.
          */
         for($i = 1; $i <= 10; $i++)
         {
