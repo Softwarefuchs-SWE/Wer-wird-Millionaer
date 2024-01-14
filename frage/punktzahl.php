@@ -1,6 +1,10 @@
 <?php
-
 session_start();
+
+
+include "./../Ressources/templates/header/full_header.php";
+require_once ("./../SWE_DB/DB_Funktionen.php");
+
 $pts_list = [
         0 => 0,
         1 => 100,
@@ -23,6 +27,21 @@ $pts_list = [
 
 $pts = isset($_SESSION['question_nr']) ? $pts_list[($_SESSION['question_nr']) - 1] : 0;
 
+$link = connect_to_db();
+
+$sql = "UPDATE swe_db.benutzerdaten
+SET Punktzahl = Punktzahl + ?
+WHERE ID = ?";
+
+$playerID = $_SESSION['spielerId'] ?? -1;
+
+$stmt = $link->prepare($sql);
+$stmt->bind_param("ii", $pts, $playerID);
+
+$stmt->execute();
+
+$link->close();
+
 ?>
 
 <head>
@@ -31,6 +50,7 @@ $pts = isset($_SESSION['question_nr']) ? $pts_list[($_SESSION['question_nr']) - 
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/inputTemplate.css">
         <link rel="stylesheet" href="../css/frage.css">
+        <link rel="stylesheet" href="../Stylesheets/basics.css">
     </head>
 </head>
 <body class="gameOverBody">
@@ -42,8 +62,7 @@ $pts = isset($_SESSION['question_nr']) ? $pts_list[($_SESSION['question_nr']) - 
         <h1 class="noMarginTop dark_FH_text"><?php echo $pts ?></h1>
     </article>
     <article>
-        <!-- HIER MUSS NOCHT DER LINK ZUM HAUPTMENUE HINZUGEFUEGT WERDEN -->
-        <a href="load_questions.php"><button class="knopfT1Medium" >Okay</button></a>
+        <a href="../Hauptmenue/hauptmenue.php"><button class="knopfT1Medium" >Okay</button></a>
     </article>
 
 </body>
