@@ -84,10 +84,6 @@ $monat_db = $link->query("SELECT monat FROM swe_db.monat");
 $monat = date('n');
 
 if($monat != $monat_db) {
-    monatsbester($monat);
-}
-
-function monatsbester ($monat) {
     $link = connect_to_db();
     $link->query("UPDATE monat SET monat = '$monat'");
     $link->query("UPDATE Benutzerdaten SET Monats_Bester = Monats_Bester + 1 WHERE Punktzahl = (SELECT MAX(Punktzahl) FROM Benutzerdaten);");
