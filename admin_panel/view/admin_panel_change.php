@@ -12,23 +12,23 @@ session_start();
  */
 
 $controller = new admin_change_controller();
-$id =-1;
+$ID =-1;
 if(!empty($_POST['checkboxes'][0])){
     $controller->setId($_POST['checkboxes'][0]);
     $question = $controller->getQuestion();
-     $id = $_POST['checkboxes'][0];
+     $ID = $_POST['checkboxes'][0];
 }
 
 if(!empty($_POST['confirm_change_panel'])){
-     $id = $_POST['id'];
-     $controller->setId($_POST['id']);
+     $ID = $_POST['ID'];
+     $controller->setId($_POST['ID']);
      $update = $_POST;
      var_dump($update);
      $question = $controller->getQuestion();
 
-    if($controller->insert_change_question($update,$id)){
+    if($controller->insert_change_question($update,$ID)){
         echo "Update erfolgreich!";
-        $question = get_question_by_id($id);
+        $question = get_question_by_id($ID);
     }
 
 }
@@ -142,7 +142,7 @@ if(!empty($_POST['confirm_change_panel'])){
     </div>
 
     <div class="buttonBottomContainer">
-             <input type="hidden" name="id" value="<?php echo $id?>">
+             <input type="hidden" name="ID" value="<?php echo $ID?>">
             <input class="knopfT2GrossAuswahl knopf" type="button" name="back" value="Zurück" onclick=" bacK_to_change_overview()" >
             <input class="knopfT2GrossAuswahl knopf"  type="submit" name="confirm_change_panel" value="Ändern"  >
 
