@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $link =connect_to_db();
         $db_monat = $link->query("SELECT Monats_Bester FROM Benutzerdaten WHERE ID = $spielerId");
-        $_SESSION['usertops'] = $db_monat;
+        $_SESSION['usertops'] = mysqli_fetch_assoc($db_monat)['Monats_Bester'];
 
         // Überprüfen, ob der Benutzer ein Admin ist
         $adminQuery = "SELECT * FROM AdminID WHERE ID = " . $row['ID'];
