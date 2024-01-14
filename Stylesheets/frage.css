@@ -1,0 +1,79 @@
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.options {
+    list-style: none;
+    padding: 0;
+}
+.option {
+    padding: 15px;
+    cursor: pointer;
+    display: block;
+}
+input[type="radio"]:checked + label {
+    background-color: #046E69;
+}
+
+@media (max-width: 800px){
+    .option {
+        width: 87vw;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media (min-width: 800px){
+    .option {
+        width: 40vw;
+    }
+}
+.radio_input {
+    display: none;
+}
+.question_header {
+    background-color: #046E69;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 5vh;
+}
+.option:hover + .radio_input, .radio_input:checked + label {
+    border-color: #007bff;
+}
+.joker {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.joker > a {
+    margin: 1vw 2vw 2vw 2vw;    /* t    op left bottom right */
+}
+#submitButton {
+    position: fixed;
+    bottom: 0;
+}
+.gameOverBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.noMarginTop {
+    margin-top: 0;
+}
+.noMarginBot {
+    margin-bottom: 0;
+}
+.dark_FH_text {
+    color: #046E69;
+}
+.noCss{
+    background-color: unset;
+    box-shadow: none;
+}
+.disableJoker {
+    opacity: 0;
+    pointer-events: none;
+}

@@ -11,7 +11,9 @@ CREATE TABLE IF NOT EXISTS Benutzerdaten
   Name_erstes_Haustier VARCHAR(100),
   Nachname_Mutter VARCHAR(100),
   Lieblingszahl INT,
-  Passwort VARCHAR(100)
+  Passwort VARCHAR(100),
+  Punktzahl INT DEFAULT 0,
+  Monats_Bester INT DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS AdminID
@@ -19,8 +21,14 @@ CREATE TABLE IF NOT EXISTS AdminID
   ID INT UNIQUE
 );
 
+CREATE TABLE IF NOT EXISTS Monat
+(
+  Monat INT
+);
+
 CREATE TABLE IF NOT EXISTS Fragen
 (
+  ID INT AUTO_INCREMENT PRIMARY KEY,
   Frage VARCHAR(100),
   Antwort_1 VARCHAR(100),
   Antwort_2 VARCHAR(100),
