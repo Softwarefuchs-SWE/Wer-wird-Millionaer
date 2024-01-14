@@ -2,7 +2,7 @@
 
 session_start();
 
-include "./../Ressources/templates/header/full_header.php";
+include "../Ressources/templates/header/full_header.php";
 
 // Erhöhe die Nummer der Frage im SESSION Array, falls die erste frage generiert wurde oder eine Antwortmöglichkeit ausgewählt wurde
 if(isset($_POST['selectedOption']) || $_SESSION['question_nr'] == 0)
@@ -20,11 +20,11 @@ if(isset($_POST['selectedOption'])){
         $_SESSION['question_nr']--;
     }
 }
-
+/*
 if(sizeof($_SESSION['questions']) != 15){
     throw new Error("Could not load questions.");
 }
-
+*/
 // PHP Code fuer Publikumsjoker
 
 // richtige antwort der vier fragen
@@ -87,7 +87,7 @@ $antwort4 = $antworten[3];
 <head>
     <title>Frage</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/frage.css">
+    <link rel="stylesheet" href="../Stylesheets/frage.css">
     <link rel="stylesheet" href="../Stylesheets/inputTemplate.css">
     <link rel="stylesheet" href="../Stylesheets/basics.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

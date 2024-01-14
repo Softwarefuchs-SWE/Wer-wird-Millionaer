@@ -15,7 +15,7 @@ session_start();
 <body>
 <header class="header_grid-container">
     <div class="header_item_name">
-        <label id="nutzername" class="fontsize-20px"><?php echo $_SESSION["username"] .  " (" . $_SESSION["usertops"]?>&#9733;)</label>
+        <label id="nutzername" class="fontsize-20px"><?php echo $_SESSION["nutzername"] .  " (" . $_SESSION["usertops"]?>&#9733;)</label>
     </div>
     <div class="header_item_logo align-content-center">
         <h1 id="headline">Datenschutz</h1>
@@ -31,7 +31,7 @@ session_start();
 </div>
 <div class="sub_container">
     <section>
-        <button class="knopfT2Gross" onclick="location.href = 'hauptmenü.php';">Zurück</button>
+        <button class="knopfT2Gross" onclick="location.href = 'hauptmenu.php';">Zurück</button>
     </section>
 </div>
 </body>

@@ -2,7 +2,7 @@
 session_start();
 
 
-include "./../Ressources/templates/header/full_header.php";
+include "../Ressources/templates/header/lite_header.php";
 
 $pts_list = [
         0 => 0,
@@ -27,7 +27,7 @@ $pts_list = [
 $pts = isset($_SESSION['question_nr']) ? $pts_list[($_SESSION['question_nr']) - 1] : 0;
 
 if(isset($_SESSION['training']) && $_SESSION['training'] === false){
-    $link = mysqli_connect("localhost", "root", "123456", "swe_db");
+    $link = mysqli_connect("localhost", "root", "ihesp", "swe_db");
     mysqli_set_charset($link, "utf8");
 
     $sql = "UPDATE swe_db.benutzerdaten
@@ -53,8 +53,9 @@ WHERE ID = ?";
     <head>
         <title>Game Over</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/inputTemplate.css">
-        <link rel="stylesheet" href="../css/frage.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Stylesheets/inputTemplate.css">
+        <link rel="stylesheet" href="../Stylesheets/frage.css">
         <link rel="stylesheet" href="../Stylesheets/basics.css">
     </head>
 </head>
@@ -68,7 +69,7 @@ WHERE ID = ?";
     </article>
     <p><?php echo $msg ?></p>
     <article>
-        <a href="../Hauptmenue/hauptmenue.php"><button class="knopfT1Medium" >Okay</button></a>
+        <a href="../Hauptmenu/hauptmenu.php"><button class="knopfT1Medium" >Okay</button></a>
     </article>
 
 </body>

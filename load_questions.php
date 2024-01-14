@@ -1,10 +1,10 @@
 <?php
+include "admin_panel/db_handling_adminpanel/db_handling.php";
 
 session_start();
 
 /* DB-Link erstellen */
-$link = mysqli_connect("localhost", "root", "123456", "swe_db");
-mysqli_set_charset($link, "utf8");
+$link = connect_to_db();
 
 // ---- Feststellung des Spielmodus:
 
