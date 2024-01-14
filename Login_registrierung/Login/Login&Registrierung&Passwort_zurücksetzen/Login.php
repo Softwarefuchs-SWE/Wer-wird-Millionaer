@@ -39,9 +39,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         $spielerId = $row['ID'];
 
+
+
         // Spielerdaten in Session-Variablen speichern
         $_SESSION['spielerId'] = $spielerId;
         $_SESSION['nutzername'] = $username;
+
+        $link =connect_to_db();
+        $db_monat = $link->query("SELECT Monats_Bester FROM Benutzerdaten WHERE ID = $spielerId");
+        $_SESSION['usertops'] = $db_monat;
 
         // Überprüfen, ob der Benutzer ein Admin ist
         $adminQuery = "SELECT * FROM AdminID WHERE ID = " . $row['ID'];
@@ -73,21 +79,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // ------- Bestimmen wer monatlicher bester ist und das in der Bestenliste aktualisieren ----------
 
 $link = connect_to_db();
-$result = $link->query("SELECT monat FROM swe_db.monat");
-// das hier kann variieren je nachdem wie Julian das in der DB macht
+$monat_db = $link->query("SELECT monat FROM swe_db.monat");
 
 $monat = date('n');
-// Sollte so klappen noch nicht getestet
 
-if($monat != $result->fetch_assoc()['monat']){  // Wenn der gespeicherte MOnat anders als der aktuelle ist
+if($monat != $monat_db) {
+    monatsbester($monat);
+}
 
-    // Rufe Function auf
-
-    // Function macht:
-    // Aktualisiere Monat in der DB (den Monat als Zahl von 1 bis 12, kann auch als Parameter mitgegeben werden)
-    // Bestimme besten des Monats (der mit der aktuell meisten Punktzahl) -> aktualisiere Anzahl Monatsbester in DB bei Benutzer
-    // Reset die Punktzahlen aller User -> Punktzahl Wert bei allen Benutzern auf 0 setzen
-
+function monatsbester ($monat) {
+    $link = connect_to_db();
+    $link->query("UPDATE monat SET monat = '$monat'");
+    $link->query("UPDATE Benutzerdaten SET Monats_Bester = Monats_Bester + 1 WHERE Punktzahl = (SELECT MAX(Punktzahl) FROM Benutzerdaten);");
+    $link->query("UPDATE Benutzerdaten SET Punktzahl = 0;");
 }
 
 
