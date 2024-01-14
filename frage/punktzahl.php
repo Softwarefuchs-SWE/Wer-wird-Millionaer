@@ -3,7 +3,6 @@ session_start();
 
 
 include "./../Ressources/templates/header/full_header.php";
-require_once ("./../SWE_DB/DB_Funktionen.php");
 
 $pts_list = [
         0 => 0,
@@ -27,20 +26,26 @@ $pts_list = [
 
 $pts = isset($_SESSION['question_nr']) ? $pts_list[($_SESSION['question_nr']) - 1] : 0;
 
-$link = connect_to_db();
+if(isset($_SESSION['training']) && $_SESSION['training'] === false){
+    $link = mysqli_connect("localhost", "root", "123456", "swe_db");
+    mysqli_set_charset($link, "utf8");
 
-$sql = "UPDATE swe_db.benutzerdaten
+    $sql = "UPDATE swe_db.benutzerdaten
 SET Punktzahl = Punktzahl + ?
 WHERE ID = ?";
 
-$playerID = $_SESSION['spielerId'] ?? -1;
+    $playerID = $_SESSION['spielerId'] ?? -1;
 
-$stmt = $link->prepare($sql);
-$stmt->bind_param("ii", $pts, $playerID);
+    $stmt = $link->prepare($sql);
+    $stmt->bind_param("ii", $pts, $playerID);
 
-$stmt->execute();
+    $stmt->execute();
 
-$link->close();
+    $link->close();
+
+    $msg = "";
+} else $msg = "Bitte beachte, dass deine Punktzahl nicht gespeichert wird, da du dich im Trainingsmodus befindest!";
+
 
 ?>
 
@@ -61,6 +66,7 @@ $link->close();
     <article>
         <h1 class="noMarginTop dark_FH_text"><?php echo $pts ?></h1>
     </article>
+    <p><?php echo $msg ?></p>
     <article>
         <a href="../Hauptmenue/hauptmenue.php"><button class="knopfT1Medium" >Okay</button></a>
     </article>

@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $_SESSION['admin_check'] = false;
             //header("Location: ../../../admin_panel/view/adminpanel.php");
-            header("Location: ../../../Hauptmenü/hauptmenü.php");
+            header("Location: ../../../Hauptmenu/hauptmenu.php");
             exit();
         }
 
@@ -146,9 +146,9 @@ $conn->close();
 </div>
 
 <div class="footer">
-    <a href="#">Datenschutz</a>
+    <a href="../../../Hauptmenu/datenschutz.php">Datenschutz</a>
     <span class="separator">|</span>
-    <a href="#">Impressum</a>
+    <a href="../../../Hauptmenu/impressum.php">Impressum</a>
 </div>
 </body>
 </html>

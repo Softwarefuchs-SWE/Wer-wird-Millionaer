@@ -11,7 +11,7 @@ if($_SESSION['admin_check']===false){
     exit;
 }
 $fragen = get_question_label();
-include "admin_template.html";
+
 ?>
 
 <main>
