@@ -20,6 +20,7 @@ while($row = mysqli_fetch_row($result)){
     $questions[] = $row;
 }
 
+
 $_SESSION['questions'] = $questions;
 $_SESSION['question_nr'] = 0;
 $_SESSION['fifty_joker'] = true;
