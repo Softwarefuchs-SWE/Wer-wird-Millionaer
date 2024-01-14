@@ -1,6 +1,6 @@
 <?php
-include "admin_template.html";
 
+include "admin_template.html";
 
 $frageerfolgreich = false;
 if(!empty($_POST)){
