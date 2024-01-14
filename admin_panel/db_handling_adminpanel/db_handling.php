@@ -5,7 +5,7 @@
  */
 function connect_to_db()
 {
-    $link = mysqli_connect("localhost", "root", "root", "swe_db");
+    $link = mysqli_connect("localhost", "root", "ihesp", "swe_db");
 
     if (!$link)
     {
@@ -24,7 +24,7 @@ function connect_to_db()
  * eingefügt wird.
  * @return bool, true, wenn update erfolgreich
  */
-function update_question($fragen , $id) : bool{
+function update_question($fragen , $ID) : bool{
 
     $link = connect_to_db();
     var_dump($fragen);
@@ -45,7 +45,7 @@ function update_question($fragen , $id) : bool{
             Antwort_4 = '$ans4',
             Antwort_richtig = '$niv',
             Frage_schwierigkeit = '$richtigeAns'
-            WHERE id = '$id'";
+            WHERE ID = '$ID'";
 
 
      $result = mysqli_query($link, $sql);
@@ -115,14 +115,14 @@ function get_question_full(){
  * Datenbankfunktion die über die ID (Primary-Key) die Fragen
  * zurückgibt.
  */
-function get_question_by_id( $id) : array{
+function get_question_by_id( $ID) : array{
 
     //Verbindung zur Datenbank
     $link = connect_to_db();
     //Verhinderung von SQL-Injection
-    $id = mysqli_real_escape_string($link, $id);
+    $id = mysqli_real_escape_string($link, $ID);
 
-    $sql = "SELECT * FROM fragen WHERE id='$id'";
+    $sql = "SELECT * FROM fragen WHERE ID='$ID'";
 
     $result = mysqli_query($link,$sql);
     if (!$result) {
@@ -174,10 +174,10 @@ VALUES ('$fragentext', '$ans1', '$ans2', '$ans3', '$ans4', '$richtigeAns', '$niv
 }
 
 /**
- * @param $id, fragen id, anand die Frage aus der DB gelöcscht wird
+ * @param $ID, fragen id, anand die Frage aus der DB gelöcscht wird
  * @return bool, true, wennn die Frage erfolgreich gelöscht
  */
-function delete_by_id( $id) {
+function delete_by_id( $ID) {
 
  $link = connect_to_db();
     // Überprüfen der Verbindung
@@ -186,7 +186,7 @@ function delete_by_id( $id) {
     }
 
 // Deine DELETE-Abfrage
-    $sql = "DELETE FROM fragen WHERE id = '$id'";
+    $sql = "DELETE FROM fragen WHERE ID = '$ID'";
 
 // Ausführen der SQL-Abfrage
     $result = mysqli_query($link, $sql);

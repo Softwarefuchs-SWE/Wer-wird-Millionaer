@@ -1,6 +1,6 @@
 <?php
 include "admin_template.html";
-include "..\db_handling_adminpanel\db_handling.php";
+include "../db_handling_adminpanel/db_handling.php";
 $fragen = get_question_label();
 session_start();
 $_SESSION['question_id']=2;
@@ -11,7 +11,7 @@ if($_SESSION['admin_check']===false){
     exit;
 }
 $fragen = get_question_label();
-include "admin_template.html";
+
 ?>
 
 <main>

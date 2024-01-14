@@ -51,10 +51,6 @@ input[type="radio"]:checked + label {
 .joker > a {
     margin: 1vw 2vw 2vw 2vw;    /* t    op left bottom right */
 }
-#submitButton {
-    position: fixed;
-    bottom: 0;
-}
 .gameOverBody {
     display: flex;
     flex-direction: column;
