@@ -49,9 +49,9 @@ $_SESSION["usertops"] = "2"; //Anzahl: Wie oft man schon an der Spitze der Beste
 </header>
 <div class="main_container">
     <button class="knopfT1Gross" onclick="location.href = '../frage/load_questions.php';">Schnelles Spiel</button>
-    <button class="knopfT1Gross" onclick="location.href = '../frage/load_questions.php';">Spiel des Tages</button>
-    <button class="knopfT1Gross" onclick="location.href = '../frage/load_questions.php';">Letzte Sendung</button>
-    <button class="knopfT1Gross" onclick="location.href = '../frage/load_questions.php';">Training</button>
+    <button class="knopfT1Gross" onclick="location.href = '../frage/load_questions.php?gamemode=spiel_des_tages';">Spiel des Tages</button>
+    <button class="knopfT1Gross" onclick="location.href = '../frage/load_questions.php?gamemode=letzte_sendung';">Letzte Sendung</button>
+    <button class="knopfT1Gross" onclick="location.href = '../frage/load_questions.php?gamemode=training';">Training</button>
 </div>
 
 <div class="sub_container">
