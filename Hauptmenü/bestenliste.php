@@ -5,7 +5,7 @@ $link = connect_to_db();
 
 mysqli_set_charset($link, "utf8");
 
-$sql = "SELECT Benutzername FROM benutzerdaten LIMIT 10";
+$sql = "SELECT Benutzername, Punktzahl FROM benutzerdaten ORDER BY Punktzahl DESC LIMIT 10";
 
 $topuser_data = mysqli_query($link, $sql);
 ?>
@@ -47,7 +47,7 @@ $topuser_data = mysqli_query($link, $sql);
             if ($i <= mysqli_num_rows($topuser_data))
             {
                 $user = mysqli_fetch_assoc($topuser_data);
-                echo "<tr><td>$i</td><td>".$user['Benutzername']."</td><td>punktzahl</td></tr>";
+                echo "<tr><td>$i</td><td>".$user['Benutzername']."</td><td>".$user['Punktzahl']."</td></tr>";
             } else
             {
                 echo "<tr><td>$i</td><td></td><td></td></tr>";

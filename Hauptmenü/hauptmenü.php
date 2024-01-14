@@ -48,10 +48,10 @@ $_SESSION["usertops"] = "2"; //Anzahl: Wie oft man schon an der Spitze der Beste
     <audio id="background_music2" loop src="..\Ressources\music\music_dark.mp3"></audio>
 </header>
 <div class="main_container">
-    <button class="knopfT1Gross">Schnelles Spiel</button>
-    <button class="knopfT1Gross">Spiel des Tages</button>
-    <button class="knopfT1Gross">Letzte Sendung</button>
-    <button class="knopfT1Gross">Training</button>
+    <button class="knopfT1Gross" onclick="location.href = '../frage/load_questions.php';">Schnelles Spiel</button>
+    <button class="knopfT1Gross" onclick="location.href = '../frage/load_questions.php';">Spiel des Tages</button>
+    <button class="knopfT1Gross" onclick="location.href = '../frage/load_questions.php';">Letzte Sendung</button>
+    <button class="knopfT1Gross" onclick="location.href = '../frage/load_questions.php';">Training</button>
 </div>
 
 <div class="sub_container">
@@ -59,7 +59,7 @@ $_SESSION["usertops"] = "2"; //Anzahl: Wie oft man schon an der Spitze der Beste
         <a class="foot_singleline" href="impressum.php">Impressum</a>
         <a class="foot_singleline" href="datenschutz.php">Datenschutz</a>
     </section>
-    <section>
+    <section id="bottom_buttons">
         <button class="knopfT2GrossAuswahl">Spielen</button>
         <button class="knopfT2Gross" onclick="location.href = 'bestenliste.php';">Bestenliste</button>
     </section>
