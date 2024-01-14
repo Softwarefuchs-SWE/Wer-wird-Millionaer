@@ -1,0 +1,30 @@
+.header_grid-container {
+    display: grid;
+    grid-template-columns: 20px auto clamp(190px, 20%, 100%);
+    grid-template-rows: 80px auto;
+}
+
+.header_item_name {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+.header_item_knöpfe {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.header_item_logo {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+}
+
+.header_item_fhlogo {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#fh-logo {
+    position: relative;
+    right: -10px;
+}

@@ -2,22 +2,17 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Wer wird Millionär</title>
-    <link href="Stylesheets/inputTemplate.css" rel="stylesheet">
-    <link href="Stylesheets/basics.css" rel="stylesheet">
+
+    <link href="admin_panel/view/inputTemplate.css" rel="stylesheet">
+    <link href="admin_panel/view/basics.css" rel="stylesheet">
+    <script src="admin_panel/view/script.js" defer></script>
 </head>
 <body>
-<div class="flex flex-down">
-    <button class="knopfT1Gross">Schnelles Spiel</button>
-    <button class="knopfT1Medium">Spiel des Tages</button>
-    <button class="knopfT1Klein">Training</button>
-    <button class="knopfT2Gross">Letze Sendung</button>
-    <button class="knopfT2GrossAuswahl">Letze Sendung</button>
-</div>
-<div class="inputField">
-    hallo Welt
-</div>
-<form action="index.html">
+    <button class="knopfT1Gross" onclick="location.href = 'admin_panel/view/adminpanel.php';">Admin Test</button>
+<form action="index.html" method="get">
     <input type="text" class="inputField">
 </form>
 </body>

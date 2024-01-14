@@ -1,0 +1,190 @@
+
+#fh-logo{
+    position: fixed;
+    right: 0px;
+    top: 44px;
+}
+
+.main_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inputFieldAns{
+    display: flex;
+
+    outline: 0;
+    border-color: var(--text-grau);
+    border-width: 0 0 1px 0;
+
+    width: 310px;
+    height: 40px;
+
+    font-size: 20px;
+    color: var(--text-grau);
+
+    justify-content: center;
+    align-items: center;
+}
+.inputFieldAns form{
+
+    width: 400px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 11%;
+    margin-top : 20%;
+}
+main {
+    margin-bottom: 20%;
+}
+#niv{
+    background: #046E69;
+}
+#niv select{
+    margin: 10px;
+    outline: 0;
+    border-width: 0 0 1px 0;
+    width: 290px;
+    height: 20px;
+    font-size: 17px;
+    text-align: center;
+
+}
+
+.labelQuestion{
+    display: flex;
+    outline: 0;
+    border-color: var(--text-grau);
+    width: 310px;
+    height: 72px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    background: #00B5AD;
+    border-top: 4px solid  #046E69;
+
+}
+
+.scroll-menu{
+    margin: 15px;
+    max-height: 390px;
+    background: #00B5AD;
+}
+.option {
+    display: flex;
+    margin: 5px;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    min-height: 20px
+
+}
+
+.round-checkbox input[type="checkbox"] {
+    -webkit-appearance: none; /* Entfernt das native Styling */
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px; /* Ändere die Größe der Checkbox nach Bedarf */
+    height: 20px;
+    border-radius: 50%; /* Runde Ecken */
+    border: 2px solid white; /* Randfarbe */
+    outline: none; /* Entfernt den Standard-Fokus-Rahmen */
+    cursor: pointer; /* Zeigt den Cursor als Hand an, um zu signalisieren, dass es anklickbar ist */
+}
+.round-checkbox input[type="checkbox"]:checked {
+    background-color: #046E69; /* Ändere die Hintergrundfarbe, wenn die Checkbox aktiviert ist */
+     /* Ändere auch die Randfarbe, wenn die Checkbox aktiviert ist */
+}
+/* Hinzufügen eines benutzerdefinierten Stils für den Fokus (wenn gewünscht) */
+
+.checkbox-container {
+    display: flex;
+    align-items: center; /* Zentrierung der Checkboxen und Textfelder vertikal */
+    background: #00B5AD;
+    margin-bottom: 15px; /* Abstand zwischen den Checkbox-Containern */
+    outline: 0;
+    border-color: var(--text-grau);
+    border-width: 0 0 1px 0;
+    width: 310px;
+    height: 40px;
+    font-size: 20px;
+    color: var(--text-grau);
+    justify-content: center;
+
+}
+
+
+#inputQuestionText{
+    box-sizing: border-box;
+    height: 56px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-top: 3px solid #046E69;
+    border-bottom: 3px solid #046E69;
+    display: flex;
+    outline: 0;
+    width: 100%;
+    font-size: 20px;
+    color: var(--text-grau);
+    overflow-wrap: break-word;
+}
+
+.options{
+    max-height: 340px;
+    overflow-y: auto;
+    border: 4px solid #ccc;
+
+}
+.buttonBottomContainer form {
+ display: flex;
+
+}
+
+input:focus{
+    outline: 2px solid #046E69;
+}
+
+
+.buttonBottomContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Statt justify-items */
+    align-items: center;
+    margin-top: 20%;
+}
+
+/* Weitere Stilregeln nach Bedarf hinzufügen */
+
+/* Optional: Stilregeln für die Formularelemente */
+.buttonBottomContainer form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#text{
+    display: flex;
+    background: #046E69;
+    color: #FFFFFF;
+    text-align: center;
+    outline: 0;
+    border-width: 0 0 1px 0;
+    font-size: 20px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+   margin-bottom: 3px;
+
+
+}
