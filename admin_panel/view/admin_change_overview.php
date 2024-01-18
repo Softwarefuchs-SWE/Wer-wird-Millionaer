@@ -74,7 +74,7 @@ session_start();
                         }
                     });
                 }
-            }ü
+            }
 
             function isAnyCheckboxSelected(checkboxArray) {
                 return checkboxArray.some(function (checkbox) {
