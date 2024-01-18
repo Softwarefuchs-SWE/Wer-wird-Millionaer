@@ -2,21 +2,6 @@
     box-sizing: border-box;
 }
 
-header{
-    height: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 11%;
-    margin-top : 20%;
-}
-
-.header_item_fhlogo{
-    position: fixed;
-    right: 0px;
-    top: 44px;
-}
-
 #Ton{
     box-shadow: none;
     background-color: white;
@@ -35,17 +20,6 @@ header{
     top: 2px;
     width: 40px;
     height: 40px;
-}
-
-.header_item_name{
-    position: fixed;
-    top: 2px;
-    left: 2px;
-}
-
-.header_item_logo{
-    justify-content: center;
-    top: 20px;
 }
 
 #headline{
