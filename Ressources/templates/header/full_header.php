@@ -26,8 +26,8 @@ Achtung: Der header-Tag (HTML) und der audioManager.js sind bereist integriert.
         <img id="WWM-Logo" src="/Ressources/Images/Logo.png" alt="logo" width="185" height="150">
     </div>
 
-    <div class="header_item_fhlogo align-content-right shadow-outset">
-        <img id="fh-logo" src="/Ressources/Images/FH-Logo.png" alt="FH_Logo" width="60" height="150">
+    <div class="header_item_fhlogo align-content-right ">
+        <img id="fh-logo" class="shadow-outset" src="/Ressources/Images/FH-Logo.png" alt="FH_Logo" width="60" height="150">
     </div>
 
     <audio id="background_music1" loop src="/Ressources/music/music_lofi.mp3"></audio>

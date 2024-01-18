@@ -18,21 +18,13 @@ $topuser_data = mysqli_query($link, $sql);
     <link rel="stylesheet"  type="text/css" href="../Stylesheets/basics.css">
     <link rel="stylesheet"  type="text/css" href="../Stylesheets/inputTemplate.css">
     <link rel="stylesheet" type="text/css"  href="../Stylesheets/hauptmenü.css">
+    <link rel="stylesheet" type="text/css"  href="../admin_panel/view/header.css">
     <script src="../Ressources/audioManager.js"></script>
 </head>
 
 <body>
-<header class="header_grid-container">
-    <div class="header_item_name">
-        <label id="nutzername" class="fontsize-20px"><?php echo $_SESSION["nutzername"] .  " (" . $_SESSION["usertops"]?>&#9733;)</label>
-    </div>
 
-    <button id="Ton" class="knopfT3Rund" onclick="changeMusik()">
-        <img id="Ton" src="/Ressources/Images/Ton%20Button.png" alt="Ton ändern">
-    </button>
-    <audio id="background_music1" loop src="..\Ressources\music\music_lofi.mp3"></audio>
-    <audio id="background_music2" loop src="..\Ressources\music\music_dark.mp3"></audio>
-</header>
+<?php include ("../Ressources/templates/header/full_header.php")?>
 
 <div class="main_container" id="bestenliste">
     <div>Bestenliste (Monat)</div>

@@ -10,17 +10,13 @@ session_start();
     <link rel="stylesheet"  type="text/css" href="../Stylesheets/basics.css">
     <link rel="stylesheet"  type="text/css" href="../Stylesheets/inputTemplate.css">
     <link rel="stylesheet" type="text/css"  href="../Stylesheets/hauptmenü.css">
+    <link rel="stylesheet" type="text/css"  href="../admin_panel/view/header.css">
     <script src="../Ressources/audioManager.js"></script>
 </head>
 <body>
-<header class="header_grid-container">
-    <div class="header_item_name">
-        <label id="nutzername" class="fontsize-20px"><?php echo $_SESSION["nutzername"] .  " (" . $_SESSION["usertops"]?>&#9733;)</label>
-    </div>
-    <div class="header_item_logo align-content-center">
-        <h1 id="headline">Datenschutz</h1>
-    </div>
-</header>
+
+<?php include ("../Ressources/templates/header/noHelp_header.php")?>
+
 <div class="main_container">
     <blockquote>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
