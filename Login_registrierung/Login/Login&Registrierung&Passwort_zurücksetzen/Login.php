@@ -142,9 +142,9 @@ $conn->close();
 </div>
 
 <div class="footer">
-    <a href="../../../Hauptmenu/datenschutz.php">Datenschutz</a>
+    <a href="datenschutz_Login.php">Datenschutz</a>
     <span class="separator">|</span>
-    <a href="../../../Hauptmenu/impressum.php">Impressum</a>
+    <a href="impressum_Login.php">Impressum</a>
 </div>
 </body>
 </html>
