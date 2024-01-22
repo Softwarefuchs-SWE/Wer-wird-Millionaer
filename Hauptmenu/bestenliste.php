@@ -17,7 +17,7 @@ $topuser_data = mysqli_query($link, $sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  type="text/css" href="../Stylesheets/basics.css">
     <link rel="stylesheet"  type="text/css" href="../Stylesheets/inputTemplate.css">
-    <link rel="stylesheet" type="text/css"  href="../Stylesheets/hauptmenü.css">
+    <link rel="stylesheet" type="text/css"  href="../Stylesheets/hauptmenu.css">
     <link rel="stylesheet" type="text/css"  href="../admin_panel/view/header.css">
     <script src="../Ressources/audioManager.js"></script>
 </head>
