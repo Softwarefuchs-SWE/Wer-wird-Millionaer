@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-
-include "../Ressources/templates/header/lite_header.php";
-
 $pts_list = [
         0 => 0,
         1 => 100,
@@ -27,7 +24,7 @@ $pts_list = [
 $pts = isset($_SESSION['question_nr']) ? $pts_list[($_SESSION['question_nr']) - 1] : 0;
 
 if(isset($_SESSION['training']) && $_SESSION['training'] === false){
-    $link = mysqli_connect("localhost", "root", "ihesp", "swe_db");
+    $link = mysqli_connect("localhost", "root", "root", "swe_db");
     mysqli_set_charset($link, "utf8");
 
     $sql = "UPDATE swe_db.benutzerdaten
@@ -57,19 +54,26 @@ WHERE ID = ?";
         <link rel="stylesheet" href="../Stylesheets/inputTemplate.css">
         <link rel="stylesheet" href="../Stylesheets/frage.css">
         <link rel="stylesheet" href="../Stylesheets/basics.css">
+        <link rel="stylesheet" type="text/css"  href="../admin_panel/view/header.css">
     </head>
 </head>
-<body class="gameOverBody">
 
-    <article class="points_report">
-        <h1 class="noMarginBot dark_FH_text">Deine Punktzahl!</h1>
-    </article>
-    <article>
-        <h1 class="noMarginTop dark_FH_text"><?php echo $pts ?></h1>
-    </article>
-    <p><?php echo $msg ?></p>
-    <article>
-        <a href="../Hauptmenu/hauptmenu.php"><button class="knopfT1Medium" >Okay</button></a>
-    </article>
+<body>
+<?php include ("../Ressources/templates/header/lite_header.php")?>
 
+    <div class="gameOverBody">
+
+        <article class="points_report">
+            <h1 class="noMarginBot dark_FH_text">Deine Punktzahl!</h1>
+        </article>
+        <article>
+            <h1 class="noMarginTop dark_FH_text"><?php echo $pts ?></h1>
+        </article>
+        <p><?php echo $msg ?></p>
+        <article>
+            <a href="../Hauptmenu/hauptmenu.php"><button class="knopfT1Medium" >Okay</button></a>
+        </article>
+
+    </div>
 </body>
+
