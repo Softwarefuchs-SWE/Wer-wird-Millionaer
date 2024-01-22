@@ -21,12 +21,19 @@ session_start();
     </div>
 </header>
 <div class="main_container">
-    <blockquote>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-        dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-    </blockquote>
+    <h1>Impressum</h1>
+    <h2>Angaben gemäß § 5 TMG:</h2>
+    <p>Elysee & Arnold GmbH.<br>Student<br>Max Mustermann</p>
+    <h3>Postanschrift:</h3>
+    <p>Musterstraße 1<br>11111 Musterstadt<br></p>
+    <h3>Kontakt:</h3>
+    <p>Telefon: 1111111111111<br>Telefax: 1111111111111<br>E-Mail: example@example.com</p>
+    <p></p><h3>Vertreten durch:</h3>
+    <p>Elysee
+        <br>Arnold<br></p>
+    <p></p><h3>Urheberrechtliche Hinweise</h3>
+    <p>alles meins<br></p>
+    <p></p><h2>Information gemäß § 36 VSBG</h2>
 </div>
 <div class="sub_container">
     <section>
