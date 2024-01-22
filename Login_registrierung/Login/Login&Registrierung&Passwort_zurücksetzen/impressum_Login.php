@@ -9,15 +9,17 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  type="text/css" href="../Stylesheets/basics.css">
     <link rel="stylesheet"  type="text/css" href="../Stylesheets/inputTemplate.css">
-    <link rel="stylesheet" type="text/css"  href="../Stylesheets/hauptmenu.css">
-    <link rel="stylesheet" type="text/css"  href="../admin_panel/view/header.css">
-
+    <link rel="stylesheet" type="text/css"  href="../../../Stylesheets/hauptmenu.css">
     <script src="../Ressources/audioManager.js"></script>
+    <script src="login.js"></script>
 </head>
 <body>
+<header class="header_grid-container">
 
-<?php include ("../Ressources/templates/header/noHelp_header.php")?>
-
+    <div class="header_item_logo align-content-center">
+        <h1 id="headline">Impressum</h1>
+    </div>
+</header>
 <div class="main_container">
     <h1>Impressum</h1>
     <h2>Angaben gemäß § 5 TMG:</h2>
@@ -35,7 +37,7 @@ session_start();
 </div>
 <div class="sub_container">
     <section>
-        <button class="knopfT2Gross" onclick="location.href = 'hauptmenu.php';">Zurück</button>
+        <button class="knopfT2Gross" onclick=zurAnmeldung()>Zurück</button>
     </section>
 </div>
 </body>

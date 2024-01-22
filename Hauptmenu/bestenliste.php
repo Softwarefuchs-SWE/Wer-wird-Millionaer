@@ -19,6 +19,7 @@ $topuser_data = mysqli_query($link, $sql);
     <link rel="stylesheet"  type="text/css" href="../Stylesheets/inputTemplate.css">
     <link rel="stylesheet" type="text/css"  href="../Stylesheets/hauptmenu.css">
     <link rel="stylesheet" type="text/css"  href="../admin_panel/view/header.css">
+
     <script src="../Ressources/audioManager.js"></script>
 </head>
 
