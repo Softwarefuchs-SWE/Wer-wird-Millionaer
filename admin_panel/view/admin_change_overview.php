@@ -22,7 +22,7 @@ session_start();
 
                         echo "<div class=' round-checkbox option'>";
                         echo "<label class='labelQuestion'>" . $item['Frage'] . "</label>";
-                        echo "<input type='checkbox' class='checkScroll' name='checkboxes[]' value='" . $item['id'] . "'>";
+                        echo "<input type='checkbox' class='checkScroll' name='checkboxes[]' value='" . $item['ID'] . "'>";
                         echo "</div>";
 
                     }
@@ -74,7 +74,7 @@ session_start();
                         }
                     });
                 }
-            }ü
+            }
 
             function isAnyCheckboxSelected(checkboxArray) {
                 return checkboxArray.some(function (checkbox) {

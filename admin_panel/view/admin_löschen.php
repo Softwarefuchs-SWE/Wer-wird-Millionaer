@@ -6,8 +6,8 @@ $fragen = get_question_full();
 session_start();
 if (!empty($_POST)) {
 
-    $id = $_POST['checkboxes'][0];
-    if (delete_by_id($id)) {
+    $ID = $_POST['checkboxes'][0];
+    if (delete_by_id($ID)) {
         echo "Löschen erfolgreich!";
         $fragen = get_question_full();
     } else {
@@ -34,7 +34,7 @@ if (!empty($_POST)) {
 
                         echo "<div class='option'>";
                         echo "<label class='labelQuestion'>" . $item['Frage'] . "</label>";
-                        echo "<input type='checkbox' class='checkScroll' name='checkboxes[]' value='" . $item['id'] . "'>";
+                        echo "<input type='checkbox' class='checkScroll' name='checkboxes[]' value='" . $item['ID'] . "'>";
                         echo "</div>";
 
                     }

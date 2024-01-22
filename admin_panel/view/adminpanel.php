@@ -20,6 +20,7 @@ $fragen = get_question_label();
          <input  class="knopfT1Klein knopf " type="button" value="Frage hinzufügen" onclick="callAddPanel()">
          <input class="knopfT1Klein knopf" type="button" value="Frage löschen" onclick="callDeletePanel()">
          <input class="knopfT1Klein knopf" type="button" value="Frage ändern" onclick="callChangePanel()">
+         <input class="knopfT1Klein knopf" type="button" value="Zurück" onclick="back_login()">
      </div>
 
        <script>
@@ -32,6 +33,10 @@ $fragen = get_question_label();
            function callAddPanel(){
                window.location.href="admin_add.php";
            }
+           function back_login(){
+               window.location.href= "/Login_registrierung/Login/Login&Registrierung&Passwort_zurücksetzen/Login.php";
+           }
+
 
 
        </script>
