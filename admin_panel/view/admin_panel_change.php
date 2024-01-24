@@ -23,7 +23,6 @@ if(!empty($_POST['confirm_change_panel'])){
      $ID = $_POST['ID'];
      $controller->setId($_POST['ID']);
      $update = $_POST;
-     var_dump($update);
      $question = $controller->getQuestion();
 
     if($controller->insert_change_question($update,$ID)){

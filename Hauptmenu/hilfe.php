@@ -20,10 +20,37 @@ session_start();
 
 <div class="main_container">
     <blockquote>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-        dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+        <br>
+        <br>
+        <br>
+        <br><br>
+        <br>
+        <br><br>
+
+        <br>
+
+    </blockquote>
+    <blockquote>
+
+        Anmeldung
+        Nach erfolgreicher Anmeldung können Sie einen Spielmodus auswählen. Detaillierte Informationen
+        zu den verschiedenen Spielmodi finden Sie im Hilfemenü. Hier haben Sie außerdem die Möglichkeit,
+        zur Bestenliste zu wechseln und einzusehen, welche Spieler bereits wie viele Punkte erreicht haben.
+    </blockquote>
+        <blockquote>
+            Joker
+            Es stehen Ihnen zwei Joker zur Verfügung, die jeweils einmal im Spiel eingesetzt werden können. Der
+            Publikumsjoker zeigt an, wie das virtuelle Publikum die Frage beantworten würde. Der 50-50 Joker
+            entfernt hingegen zwei falsche Antworten, um die Auswahl zu erleichtern
+        </blockquote>
+
+
+    <blockquote>
+        Bestenliste
+        Wenn ein Spiel beendet wurden, gelangen Sie automatisch in die Bestenliste. Dort werden alle
+        Spieler mit Punkten angezeigt. Beim Spielmodus „Training“ wird die Bestenliste geleitet, aber die
+        Punkte werden Ihnen angezeigt.
     </blockquote>
 </div>
 <div class="sub_container">

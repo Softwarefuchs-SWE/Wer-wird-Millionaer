@@ -3,7 +3,7 @@
 session_start();
 
 /* DB-Link erstellen */
-$link = mysqli_connect("localhost", "root", "root", "swe_db");
+$link = mysqli_connect("localhost", "root", "123", "swe_db");
 mysqli_set_charset($link, "utf8");
 
 // ---- Feststellung des Spielmodus:

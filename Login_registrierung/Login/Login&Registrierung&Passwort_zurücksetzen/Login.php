@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // ------- Bestimmen wer monatlicher bester ist und das in der Bestenliste aktualisieren ----------
 
 $link = connect_to_db();
-$monat_db = $link->query("SELECT monat FROM swe_db.monat");
+$monat_db = $link->query("SELECT monat FROM swe_db.monat")->fetch_assoc()['monat'];
 
 $monat = date('n');
 

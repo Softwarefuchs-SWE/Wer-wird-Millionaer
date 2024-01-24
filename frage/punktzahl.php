@@ -24,7 +24,7 @@ $pts_list = [
 $pts = isset($_SESSION['question_nr']) ? $pts_list[($_SESSION['question_nr']) - 1] : 0;
 
 if(isset($_SESSION['training']) && $_SESSION['training'] === false){
-    $link = mysqli_connect("localhost", "root", "root", "swe_db");
+    $link = mysqli_connect("localhost", "root", "123", "swe_db");
     mysqli_set_charset($link, "utf8");
 
     $sql = "UPDATE swe_db.benutzerdaten

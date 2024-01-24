@@ -5,7 +5,7 @@
  */
 function connect_to_db()
 {
-    $link = mysqli_connect("localhost", "root", "root", "swe_db");
+    $link = mysqli_connect("localhost", "root", "123", "swe_db");
 
     if (!$link)
     {
@@ -27,7 +27,6 @@ function connect_to_db()
 function update_question($fragen , $ID) : bool{
 
     $link = connect_to_db();
-    var_dump($fragen);
     $fragentext = mysqli_real_escape_string($link, $fragen["frage"]);
     $ans1 = mysqli_real_escape_string($link, $fragen["ans1"]);
     $ans2 = mysqli_real_escape_string($link, $fragen["ans2"]);
